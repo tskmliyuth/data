@@ -1,0 +1,84 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'/>
+<link rel="stylesheet" media="all" type="text/css" href="jquery-ui/css/ui-lightness/jquery-ui-1.8.13.custom.css" />
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'/>
+
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+
+<script type="text/javascript" src="jquery-ui/js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-timepicker-addon.js"></script>
+
+<script>
+$(function() {
+	$( '.myDatePicker' ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+        
+        $('.myDateTimePicker').datetimepicker({
+		ampm: false,
+                changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+});
+
+</script>
+
+
+
+<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td ><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">Details #REPORT_NAME#</div></td>
+    </tr>
+    </table>
+</div>
+
+
+<div id="containtor">
+<table>
+    <tr><td valign="top">
+    <div class="left-menu">    
+#SUB_MANU#
+    </div>
+    </td>
+    
+    <td valign="top">	
+	
+	<div id='content'>
+	<table style='font-size:14px'>
+       <table>
+            <tr align='left'> <td height="40"><font size='5'> Detail Enquiry ,<font color="blue"> from #Bank_Name#</font></td></tr>
+        <tr align='left'> <td height="40"><font size='5'>Updated date:<font color="blue"> #Upload_date#</td></tr>
+        <tr align='left'> <td height="40"><font size='5'>status:<font color="blue">#status#</td></tr>
+        </table>
+            
+        <h1><font size="6"><font color="Red">Enquiry Uploader:</font></h1>
+        <table>
+        <tr align='left'> <td height="40"><font size="5">Name: <font color="blue">#Upload_name#</font></td></tr>
+        <tr align='left'> <td height="40"><font size="5">Position:<font color="blue">#Position#</font></td></tr>
+        <tr align='left'> <td height="40"><font size="5">Email Address:<font color="blue"> #email_address#</font></td></tr>
+       <tr align='left'> <td height="40"><font size="5"> Mobile Phone :<font color="blue"> #phone#</font></td></tr>
+        <tr align='left'> <td height="40"><font size="5">Enquiry Subject: <font color="blue">#Enquiry_Subject#</font></td></tr>
+       <tr align='left'> <td height="40"><font size="5"> Perfer to be contacted by<font color="blue"> #type#</font></td></tr>
+        
+       <tr align='left'> <td height="40"><font size="5"> Enquiry:</font></td></tr>
+
+      <tr align='left'> <td height="40"><font size="5"> <textarea cols="60" rows="5" type='text'  value='#details#' alt='' disabled='disabled'/>#details#</textarea></td></tr>
+	</table>
+        </div>
+                <div id='content'>
+               
+                <input type='button' value='Back' name='Back' onclick="document.location = 'InputReportadmin?ReportType=#REPORT_TYPE#&Type=Search';"  /> &nbsp;&nbsp;&nbsp;
+               
+                </div>
+	</form>
+    </td></tr>
+</table>
+</div>

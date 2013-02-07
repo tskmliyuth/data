@@ -1,0 +1,172 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'>
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'>
+
+<script>
+$(function() {
+	$( '.myDatePicker' ).datepicker({
+		changeMonth: true,
+		changeYear: true
+	});
+});
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        $("#myBtSave").click(function(event){
+            
+            var answer=confirm("do you want to update?")
+            if (!answer){
+                return;
+            }
+
+            event.preventDefault();    
+            $.ajax({
+            type: "POST",
+            url: "users?Type=Update",
+            contentType: "application/x-www-form-urlencoded;charset=UTF-8" ,
+            data:"myBox_USER_NAME=" + $("#myBox_USER_NAME").val() + "&myBox_USER_NO=" + $("#myBox_USER_NO").val() + "&myBox_USER_FULL_NAME=" + $("#myBox_USER_FULL_NAME").val() + "&myBox_USER_ROLE_NO=" + $("#myBox_USER_ROLE_NO").val() + "&myBox_USER_MEMB_NO=" + $("#myBox_USER_MEMB_NO").val() + "&myBox_USER_STATUS=" + $("#myBox_USER_STATUS").val() + "&myBox_USER_ADDRESS=" + $("#myBox_USER_ADDRESS").val() + "&myBox_USER_PHONE=" + $("#myBox_USER_PHONE").val() + "&myBox_USER_FAX=" + $("#myBox_USER_FAX").val() + "&myBox_USER_EMAIL=" + $("#myBox_USER_EMAIL").val() + "&myBox_USER_CA=" + encodeURIComponent($("#myBox_USER_CA").val()) + "&myBox_USER_DS=" + encodeURIComponent($("#myBox_USER_DS").val()) ,
+            success: function(data){
+            var x = eval('(' + data + ')');
+            if (x.myERR=="FALSE"){
+                $("#myBox_USER_NAME").val("");
+                $("#myBox_USER_FULL_NAME").val("");
+                $("#myBox_USER_ADDRESS").val("");
+                $("#myBox_USER_PHONE").val("");
+                $("#myBox_USER_FAX").val("");
+                $("#myBox_USER_EMAIL").val("");
+                $("#myBox_USER_CA").val("");
+                $("#myBox_USER_DS").val("");
+                alert(x.Message);
+            }else{alert(x.Message);}
+                    if (x.myERR_USER_NAME==null)$("#myERR_USER_NAME").text("");else $("#myERR_USER_NAME").text(x.myERR_USER_NAME) ;
+                    if (x.myERR_USER_FULL_NAME==null)$("#myERR_USER_FULL_NAME").text("");else $("#myERR_USER_FULL_NAME").text(x.myERR_USER_FULL_NAME) ;
+                    if (x.myERR_USER_ROLE_NO==null)$("#myERR_USER_ROLE_NO").text("");else $("#myERR_USER_ROLE_NO").text(x.myERR_USER_ROLE_NO) ;
+                    if (x.myERR_USER_MEMB_NO==null)$("#myERR_USER_MEMB_NO").text("");else $("#myERR_USER_MEMB_NO").text(x.myERR_USER_MEMB_NO) ;
+                    if (x.myERR_USER_STATUS==null)$("#myERR_USER_STATUS").text("");else $("#myERR_USER_STATUS").text(x.myERR_USER_STATUS) ;
+                    if (x.myERR_USER_ADDRESS==null)$("#myERR_USER_ADDRESS").text("");else $("#myERR_USER_ADDRESS").text(x.myERR_USER_ADDRESS) ;
+                    if (x.myERR_USER_PHONE==null)$("#myERR_USER_PHONE").text("");else $("#myERR_USER_PHONE").text(x.myERR_USER_PHONE) ;
+                    if (x.myERR_USER_FAX==null)$("#myERR_USER_FAX").text("");else $("#myERR_USER_FAX").text(x.myERR_USER_FAX) ;
+                    if (x.myERR_USER_EMAIL==null)$("#myERR_USER_EMAIL").text("");else $("#myERR_USER_EMAIL").text(x.myERR_USER_EMAIL) ;    
+            }
+            });
+        });
+    });
+</script>
+
+<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td ><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">Edit on the existing user</div></td>
+    </tr>
+    </table>
+</div>
+
+
+<div id="containtor">
+<table>
+    <tr><td valign="top">
+    <div class="left-menu">
+    
+    	<div id="menu4">
+	<ul>
+            <li><a href="members?Type=AddNew">Create New Member</a></li>
+            <li><a href="members?Type=Search">Search Member</a></li>
+            <li><a href="users?Type=AddNew">Create New User</a></li>
+            <li><a href="users?Type=Search">Search User</a></li>            
+            <li><a href="ChangePassword">Change Password</a></li>
+            <li><a href="infos?Type=AddNew">Board Information</a></li>
+            <li><a href="currencies?Type=Search">Search Exchange Rate</a></li>    
+            <li><a href="currencies?Type=Today">Exchange Rate</a></li>
+	</ul>
+	</div>
+    
+    </div>
+    </td>
+    
+    <td valign="top">	
+            <form method='post' name='frm_DATA_USERS'>
+                <div id='content'>
+                <table style='font-size:14px'>
+                <tr align='left'><td width='150'><label id='myLbl_USER_NO'>No</label></td><td width='150'><input type='text' id='myBox_USER_NO' value='#myVal_USER_NO#' alt='' disabled='disabled'/></td><td><label style='color:#F00;' id='myERR_USER_NO'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_NAME'>Username</label></td><td width='150'><input type='text' id='myBox_USER_NAME' value='#myVal_USER_NAME#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_NAME'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_FULL_NAME'>Full Name</label></td><td width='150'><input type='text' id='myBox_USER_FULL_NAME' value='#myVal_USER_FULL_NAME#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_FULL_NAME'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_ROLE_NO'>Member Role</label></td><td width='150'><select id='myBox_USER_ROLE_NO' alt=''>#myVal_USER_ROLE_NO#</select></td><td><label style='color:#F00;' id='myERR_USER_ROLE_NO'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_MEMB_NO'>Member Name</label></td><td width='150'><select id='myBox_USER_MEMB_NO' alt=''>#myVal_USER_MEMB_NO#</select></td><td><label style='color:#F00;' id='myERR_USER_MEMB_NO'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_STATUS'>Status</label></td><td width='150'><select id='myBox_USER_STATUS' alt=''>#myVal_USER_STATUS#</select></td><td><label style='color:#F00;' id='myERR_USER_STATUS'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_ADDRESS'>Address</label></td><td width='150'><input type='text' id='myBox_USER_ADDRESS' value='#myVal_USER_ADDRESS#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_ADDRESS'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_PHONE'>Phone</label></td><td width='150'><input type='text' id='myBox_USER_PHONE' value='#myVal_USER_PHONE#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_PHONE'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_FAX'>Fax</label></td><td width='150'><input type='text' id='myBox_USER_FAX' value='#myVal_USER_FAX#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_FAX'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_EMAIL'>Email</label></td><td width='150'><input type='text' id='myBox_USER_EMAIL' value='#myVal_USER_EMAIL#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_EMAIL'></label></td></tr>
+                </table>
+                </div>
+        
+                <div id='content'>
+                <table style='font-size:14px'>
+                    <tr align='left'><td width='150'><label id='myLbl_INHI_MESSAGE' >Certification</label></td></tr>
+                    <tr align='left'><td width='150'><textarea cols="86" rows="5" id='myBox_USER_CA' name="certificationChain" alt='' readonly>#myVal_USER_CA#</textarea></td></tr>
+                    <tr align='left'><td width='150'><label id='myLbl_INHI_MESSAGE'>Digital Signature</label></td></tr><br/>
+                    <tr align='left'><td width='150'><textarea cols="86" rows="5" id='myBox_USER_DS' name="signature" alt='' readonly>#myVal_USER_DS#</textarea></td></tr>
+                    <tr align='left'><td><label style='color:#F00;' id='myERR_INHI_MESSAGE'></label></td></tr>
+                    <tr>
+                    <input type="hidden" name="fileToBeSigned" value="BSS"/>             
+                        
+                    </tr>
+                    
+                    <td>
+                        
+                        
+                    <object
+                    classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D57"
+                    codebase="http://java.sun.com/update/1.5.0/jinstall-1_5-windows-i586.cab#Version=5,0,0,5"
+                    width="130" height="25" name="SmartCardSignerApplet_STR">
+                    <param name="code" value="SmartCardSignerApplet_STR">
+                    <param name="archive" value="applet/SmartCardSignerApplet_STR.jar">
+                    <param name="mayscript" value="true">
+                        <param name="type" value="application/x-java-applet;version=1.5">
+                    <param name="scriptable" value="false">
+                        <param name="fileNameField" value="fileToBeSigned">
+                        <param name="certificationChainField" value="certificationChain">
+                        <param name="signatureField" value="signature">
+                        <param name="signButtonCaption" value="Get Certificate"
+
+                        <comment>
+                                <embed
+                                type="application/x-java-applet;version=1.5"
+                                code="SmartCardSignerApplet_STR" archive="applet/SmartCardSignerApplet_STR.jar"
+                                width="130" height="25" scriptable="true"
+                                    pluginspage="http://java.sun.com/products/plugin/index.html#download"
+                                fileNameField="fileToBeSigned"
+                                certificationChainField="certificationChain"
+                                signatureField="signature"
+                                signButtonCaption="Get Certificate">
+                                </embed>
+                                <noembed>
+                                Smart card signing applet can not be started because
+                                Java Plugin 1.5 or newer is not installed.
+                            </noembed>
+                        </comment>
+                    </object>
+
+                        
+                        
+                        
+                    </td>
+                </table>
+                </div>                            
+	
+                <div id='content'>
+                <input type='button' value='New' onclick="document.location = 'users';"  /> &nbsp;&nbsp;&nbsp;
+                <input type='submit' value='Update' name='myBtSave' id='myBtSave' /> &nbsp;&nbsp;&nbsp;
+                <input type='button' value='Search' onclick="document.location = 'users?Type=Search';"  /> &nbsp;&nbsp;&nbsp;
+                <input type='reset' value='Reset' />
+                </div>
+        </form>
+    </td></tr>
+</table>
+</div>

@@ -1,0 +1,125 @@
+<table>
+        <tr> <td height="40"><font size="+1"> #REPORT_NAME# report</font> </td></tr>
+  </table>
+
+	
+       <table>
+            <tr align='left'> <td height="40"><font size='4'> Detail Enquiry ,<font color="blue"> from #Bank_Name#</font></td></tr>
+        <tr align='left'> <td height="40"><font size='4'>Updated date:<font color="blue"> #Upload_date#</td></tr>
+        <tr align='left'> <td height="40"><font size='4'>status:<font color="blue">#status#</td></tr>
+        </table>
+            
+        <h1><font size="5"><font color="Red">Enquiry Uploader:</font></h1>
+        <table>
+        <tr align='left'> <td height="40"><font size="4">Name: <font color="blue">#Upload_name#</font></td></tr>
+        <tr align='left'> <td height="40"><font size="4">Position:<font color="blue">#Position#</font></td></tr>
+        <tr align='left'> <td height="40"><font size="4">Email Address:<font color="blue"> #email_address#</font></td></tr>
+       <tr align='left'> <td height="40"><font size="4"> Mobile Phone :<font color="blue"> #phone#</font></td></tr>
+        <tr align='left'> <td height="40"><font size="4">Enquiry Subject: <font color="blue">#Enquiry_Subject#</font></td></tr>
+       <tr align='left'> <td height="40"><font size="4"> Perfer to be contacted by<font color="blue"> #type#</font></td></tr>
+        
+       <tr align='left'> <td height="40"><font size="4"> Enquiry:</font></td></tr>
+       
+      <tr align='left'> <td height="40"><font size="4"><font color="blue"> #details#</font></td></tr>
+
+	</table>
+        
+
+    
+    
+
+        <script>
+            function CAuthorize(){
+                var answer=confirm("Do you want to authorize this file ?");
+                    if (answer){
+                        var theForm=document.getElementById("myForm");
+                        theForm.action = "authorize_feed?ReportType=#SESSION_TYPE#&Type=Authorize";
+                        theForm.submit();                       
+                    }
+
+            }
+            function CReject(){
+                var answer=confirm("Do you want to reject this file ?");
+                    if (answer){
+                        var theForm=document.getElementById("myForm");
+                        theForm.action = "authorize_feed?ReportType=#SESSION_TYPE#&Type=Reject";
+                        theForm.submit(); 
+                    }
+            }
+        </script>
+
+        <form method="POST" id="myForm">      
+        <input type="hidden" name="fileToBeSigned" value="#DS#"/>
+        <input type="hidden" name="certificationChain"/>   
+        <input type="hidden" name="signature"/>
+        </form>
+        <object
+    	classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D88"
+        codeBase="." width="130" height="25">
+        <param name="name" value="SmartCardSigner">
+        <param name="code" value="SmartCardSigner">
+    	<param name="archive" value="applet/SmartCardSigner.jar">
+    	<param name="mayscript" value="true">
+	    <param name="type" value="application/x-java-applet;version=1.5">
+            <param name="scriptable" value="false">
+	    <param name="fileNameField" value="fileToBeSigned">
+	    <param name="certificationChainField" value="certificationChain">
+	    <param name="signatureField" value="signature">
+	    <param name="signButtonCaption" value="Authorize">
+            <param name="JAVASCRIPT_FUNCTION_NAME" value="CAuthorize">
+	    <comment>
+                    <embed
+	            type="application/x-java-applet;version=1.5"
+                    name="SmartCardSigner"
+	            code="SmartCardSigner" 
+                    archive="applet/SmartCardSigner.jar"
+	            width="130" height="25" scriptable="true"
+		    pluginspage="http://java.sun.com/products/plugin/index.html#download"
+	            fileNameField="fileToBeSigned"
+	            certificationChainField="certificationChain"
+	            signatureField="signature"
+	            signButtonCaption="Authorize"
+                    JAVASCRIPT_FUNCTION_NAME="CAuthorize">
+                    </embed>
+		    <noembed>
+	            Smart card signing applet can not be started because
+	            Java Plugin 1.5 or newer is not installed.
+                    </noembed>
+	    </comment>
+	</object>
+
+        <object
+    	classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D88"
+        codeBase="." width="130" height="25">
+        <param name="name" value="SmartCardSigner">
+        <param name="code" value="SmartCardSigner">
+    	<param name="archive" value="applet/SmartCardSigner.jar">
+    	<param name="mayscript" value="true">
+	    <param name="type" value="application/x-java-applet;version=1.5">
+            <param name="scriptable" value="false">
+	    <param name="fileNameField" value="fileToBeSigned">
+	    <param name="certificationChainField" value="certificationChain">
+	    <param name="signatureField" value="signature">
+	    <param name="signButtonCaption" value="Authorize">
+            <param name="JAVASCRIPT_FUNCTION_NAME" value="CAuthorize">
+	    <comment>
+                    <embed
+	            type="application/x-java-applet;version=1.5"
+                    name="SmartCardSigner"
+	            code="SmartCardSigner" 
+                    archive="applet/SmartCardSigner.jar"
+	            width="130" height="25" scriptable="true"
+		    pluginspage="http://java.sun.com/products/plugin/index.html#download"
+	            fileNameField="fileToBeSigned"
+	            certificationChainField="certificationChain"
+	            signatureField="signature"
+	            signButtonCaption="Reject"
+                    JAVASCRIPT_FUNCTION_NAME="CReject">
+                    </embed>
+		    <noembed>
+	            Smart card signing applet can not be started because
+	            Java Plugin 1.5 or newer is not installed.
+                    </noembed>
+	    </comment>
+	</object>
+        

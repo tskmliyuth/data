@@ -1,0 +1,51 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'>
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'>
+
+<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td ><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">List of 20 top of board information</div></td>
+    </tr>
+    </table>
+</div>
+
+<div id="containtor">
+<table>
+    <tr><td valign="top">
+    <div class="left-menu">
+    
+    	<div id="menu4">
+	<ul>
+            <li><a href="members?Type=AddNew">Create New Member</a></li>
+            <li><a href="members?Type=Search">Search Member</a></li>
+            <li><a href="users?Type=AddNew">Create New User</a></li>
+            <li><a href="users?Type=Search">Search User</a></li>            
+            <li><a href="ChangePassword">Change Password</a></li>
+            <li><a href="infos?Type=AddNew">Board Information</a></li>
+            <li><a href="currencies?Type=Search">Search Exchange Rate</a></li>    
+            <li><a href="currencies?Type=Today">Exchange Rate</a></li>  
+	</ul>
+	</div>
+    
+    </div>
+    </td>
+    
+    <td valign="top">
+		<form method='post' name='frm_DATA_INFOS'>	
+                <div id='content'>
+#DATA#
+                </div>               
+       		<div id='content'>
+                <input type='button' value='New' onclick="document.location = 'infos?Type=AddNew';"  /> &nbsp;&nbsp;&nbsp;
+                <input type='button' value='Refresh' onclick="document.location = 'infos?Type=Search';"  /> &nbsp;&nbsp;&nbsp;
+            	</div>
+		</form>
+    </td></tr>
+</table>
+
+</div>

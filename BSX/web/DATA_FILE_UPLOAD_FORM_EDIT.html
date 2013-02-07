@@ -1,0 +1,73 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'/>
+<link rel="stylesheet" media="all" type="text/css" href="jquery-ui/css/ui-lightness/jquery-ui-1.8.13.custom.css" />
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'/>
+
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+
+<script type="text/javascript" src="jquery-ui/js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-timepicker-addon.js"></script>
+
+<script>
+$(function() {
+	$( '.myDatePicker' ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+        
+        $('.myDateTimePicker').datetimepicker({
+		ampm: false,
+                changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+});
+
+</script>
+
+
+
+<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td ><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">Reject #REPORT_NAME#</div></td>
+    </tr>
+    </table>
+</div>
+
+
+<div id="containtor">
+<table>
+    <tr><td valign="top">
+    <div class="left-menu">    
+#SUB_MANU#    
+    </div>
+    </td>
+    
+    <td valign="top">	
+	<form method='post' name='frm_DATA_FILE_UPLOAD' action="inputreport?ReportType=#REPORT_TYPE#&Type=Update">
+	<div id='content'>
+	<table style='font-size:14px'>
+	<tr align='left'><td width='150'><label id='myLbl_FIUP_NO'>No</label></td><td width='150'><input type='text' name='myBox_FIUP_NO' id='myBox_FIUP_NO' value='#myVal_FIUP_NO#' alt='' disabled='disabled'/></td><td><label style='color:#F00;' id='myERR_FIUP_NO'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_FIUP_NAME'>File Name</label></td><td width='150'><input type='text' id='myBox_FIUP_NAME' value='#myVal_FIUP_NAME#' alt='' disabled='disabled'/></td><td><label style='color:#F00;' id='myERR_FIUP_NAME'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_FIUP_SESS_NO'>Session No</label></td><td width='150'><input type='text' id='myBox_FIUP_SESS_NO' value='#myVal_FIUP_SESS_NO#' alt='' disabled='disabled'/></td><td><label style='color:#F00;' id='myERR_FIUP_SESS_NO'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_FIUP_DURA_NO'>Duration</label></td><td width='150'><select id='myBox_FIUP_DURA_NO' alt='' disabled='disabled'>#myVal_FIUP_DURA_NO#</select></td><td><label style='color:#F00;' id='myERR_FIUP_DURA_NO'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_FIUP_MEMB_NO'>Member Name</label></td><td width='150'><select id='myBox_FIUP_MEMB_NO' alt='' disabled='disabled'>#myVal_FIUP_MEMB_NO#</select></td><td><label style='color:#F00;' id='myERR_FIUP_MEMB_NO'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_FIUP_STATUS'>Status</label></td><td width='150'><select id='myBox_FIUP_STATUS' alt='' disabled='disabled'>#myVal_FIUP_STATUS#</select></td><td><label style='color:#F00;' id='myERR_FIUP_STATUS'></label></td></tr>
+
+	</table>
+        </div>
+                <div id='content'>
+                <input type='button' value='Reject' onclick="document.location = 'inputreport?ReportType=#REPORT_TYPE#&Type=Update&myVal_FIUP_NO=#myVal_FIUP_NO#';" /> &nbsp;&nbsp;&nbsp;
+                <input type='button' value='Cancel' onclick="document.location = 'inputreport?ReportType=#REPORT_TYPE#&Type=Search';"  /> &nbsp;&nbsp;&nbsp;
+               
+                </div>
+	</form>
+    </td></tr>
+</table>
+</div>

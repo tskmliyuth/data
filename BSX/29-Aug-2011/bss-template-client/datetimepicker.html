@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Datepicker - Display month &amp; year menus</title>
+
+
+
+	<link rel="stylesheet" href="jquery-ui/development-bundle/themes/base/jquery.ui.all.css">
+	<script src="jquery-ui/development-bundle/jquery-1.5.1.js"></script>
+	<script src="jquery-ui/development-bundle/ui/jquery.ui.core.js"></script>
+	<script src="jquery-ui/development-bundle/ui/jquery.ui.widget.js"></script>
+	<script src="jquery-ui/development-bundle/ui/jquery.ui.datepicker.js"></script>
+	<link rel="stylesheet" href="jquery-ui/development-bundle/demos/demos.css">
+	<script>
+	$(function() {
+	date_obj = new Date();
+	date_obj_hours = date_obj.getHours();
+	date_obj_mins = date_obj.getMinutes();
+	
+	if (date_obj_mins < 10) { date_obj_mins = "0" + date_obj_mins; }
+	
+	if (date_obj_hours > 11) {
+		date_obj_hours = date_obj_hours - 12;
+		date_obj_am_pm = " PM";
+	} else {
+		date_obj_am_pm = " AM";
+	}
+
+	date_obj_time = "' "+date_obj_hours+":"+date_obj_mins+date_obj_am_pm+"'";
+		
+	$( ".myDatePicker" ).datepicker({dateFormat: $.datepicker.W3C + date_obj_time}); 
+	});
+	</script>
+	
+</head>
+<body>
+
+
+
+<p>Date: <input type="text" class="myDatePicker"></p>
+
+
+
+</body>
+</html>

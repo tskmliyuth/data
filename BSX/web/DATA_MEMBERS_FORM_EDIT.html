@@ -1,0 +1,109 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'/>
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'/>
+
+<script>
+$(function() {
+	$( '.myDatePicker' ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+});
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        $("#myBtSave").click(function(event){
+	
+            var answer=confirm("do you want to update?")
+            if (!answer){
+                return;
+            }
+	
+            event.preventDefault();    
+            $.ajax({
+            type: "POST",
+            url: "members?Type=Update",
+            data:"myBox_MEMB_NO=" + $("#myBox_MEMB_NO").val() + "&myBox_MEMB_NAME=" + $("#myBox_MEMB_NAME").val() + "&myBox_MEMB_SNAME=" + $("#myBox_MEMB_SNAME").val() + "&myBox_MEMB_BOD=" + $("#myBox_MEMB_BOD").val() + "&myBox_MEMB_BCDATE=" + $("#myBox_MEMB_BCDATE").val() + "&myBox_MEMB_STATUS=" + $("#myBox_MEMB_STATUS").val(),
+            success: function(data){                    
+            var x = eval('(' + data + ')');
+            if (x.myERR=="FALSE"){
+	$("#myBox_MEMB_NO").val("");
+	$("#myBox_MEMB_NAME").val("");
+	$("#myBox_MEMB_SNAME").val("");
+	$("#myBox_MEMB_BOD").val("");
+	$("#myBox_MEMB_BCDATE").val("");
+  
+                alert(x.Message);
+            }else{alert(x.Message);}
+	if (x.myERR_MEMB_NO==null)$("#myERR_MEMB_NO").text("");else $("#myERR_MEMB_NO").text(x.myERR_MEMB_NO) ;
+	if (x.myERR_MEMB_NAME==null)$("#myERR_MEMB_NAME").text("");else $("#myERR_MEMB_NAME").text(x.myERR_MEMB_NAME) ;
+	if (x.myERR_MEMB_SNAME==null)$("#myERR_MEMB_SNAME").text("");else $("#myERR_MEMB_SNAME").text(x.myERR_MEMB_SNAME) ;
+	if (x.myERR_MEMB_BOD==null)$("#myERR_MEMB_BOD").text("");else $("#myERR_MEMB_BOD").text(x.myERR_MEMB_BOD) ;
+	if (x.myERR_MEMB_BCDATE==null)$("#myERR_MEMB_BCDATE").text("");else $("#myERR_MEMB_BCDATE").text(x.myERR_MEMB_BCDATE) ;
+	if (x.myERR_MEMB_STATUS==null)$("#myERR_MEMB_STATUS").text("");else $("#myERR_MEMB_STATUS").text(x.myERR_MEMB_STATUS) ;
+   
+            }
+            });
+        });
+    });
+</script>
+
+<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td ><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">Edit members</div></td>
+    </tr>
+    </table>
+</div>
+
+
+<div id="containtor">
+<table>
+    <tr><td valign="top">
+    <div class="left-menu">    
+    	<div id="menu4">
+	<ul>
+            <li><a href="members?Type=AddNew">Create New Member</a></li>
+            <li><a href="members?Type=Search">Search Member</a></li>
+            <li><a href="users?Type=AddNew">Create New User</a></li>
+            <li><a href="users?Type=Search">Search User</a></li>            
+            <li><a href="ChangePassword">Change Password</a></li>
+            <li><a href="infos?Type=AddNew">Board Information</a></li>
+            <li><a href="currencies?Type=Search">Search Exchange Rate</a></li>    
+            <li><a href="currencies?Type=Today">Exchange Rate</a></li>  
+	</ul>
+	</div>
+    
+    </div>
+    </td>
+    
+    <td valign="top">	
+	<form method='post' name='frm_DATA_MEMBERS'>
+	<div id='content'>
+	<table style='font-size:14px'>
+	<tr align='left'><td width='150'><label id='myLbl_MEMB_NO'>No</label></td><td width='150'><input type='text' id='myBox_MEMB_NO' value='#myVal_MEMB_NO#' alt='' disabled='disabled'/></td><td><label style='color:#F00;' id='myERR_MEMB_NO'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_MEMB_NAME'>Full Name</label></td><td width='150'><input type='text' id='myBox_MEMB_NAME' value='#myVal_MEMB_NAME#' alt=''/></td><td><label style='color:#F00;' id='myERR_MEMB_NAME'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_MEMB_SNAME'>Sort Name</label></td><td width='150'><input type='text' id='myBox_MEMB_SNAME' value='#myVal_MEMB_SNAME#' alt=''/></td><td><label style='color:#F00;' id='myERR_MEMB_SNAME'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_MEMB_BOD'>Date Created</label></td><td width='150'><input type='text' class='myDatePicker' id='myBox_MEMB_BOD' value='#myVal_MEMB_BOD#' alt='' Readonly/></td><td><label style='color:#F00;' id='myERR_MEMB_BOD'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_MEMB_BCDATE'>Date Closed</label></td><td width='150'><input type='text' class='myDatePicker' id='myBox_MEMB_BCDATE' value='#myVal_MEMB_BCDATE#' alt='' /></td><td><label style='color:#F00;' id='myERR_MEMB_BCDATE'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_MEMB_STATUS'>Status</label></td><td width='150'><select id='myBox_MEMB_STATUS' alt=''>#myVal_MEMB_STATUS#</select></td><td><label style='color:#F00;' id='myERR_MEMB_STATUS'></label></td></tr>
+
+	</table>
+                </div>
+                <div id='content'>
+                <input type='button' value='New' onclick="document.location = 'members?Type=AddNew';"  /> &nbsp;&nbsp;&nbsp;
+                <input type='submit' value='Update' name='myBtSave' id='myBtSave' /> &nbsp;&nbsp;&nbsp;
+                <input type='button' value='Search' onclick="document.location = 'members?Type=Search';"  /> &nbsp;&nbsp;&nbsp;
+                <input type='reset' value='Reset' />
+                </div>
+	</form>
+    </td></tr>
+</table>
+</div>S

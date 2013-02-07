@@ -1,0 +1,81 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'/>
+<link rel="stylesheet" media="all" type="text/css" href="jquery-ui/css/ui-lightness/jquery-ui-1.8.13.custom.css" />
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'/>
+
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+
+<script type="text/javascript" src="jquery-ui/js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-timepicker-addon.js"></script>
+
+<script>
+$(function() {
+	$( '.myDatePicker' ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+        
+        $('.myDateTimePicker').datetimepicker({
+		ampm: false,
+                changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+});
+
+
+
+</script>
+
+
+<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td ><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">Exchange rate for #DATE#</div></td>
+    </tr>
+    </table>
+</div>
+
+<div id="containtor">
+<table>
+    <tr><td valign="top">
+    <div class="left-menu">
+    
+    	<div id="menu4">
+	<ul>
+            <li><a href="members?Type=AddNew">Create New Member</a></li>
+            <li><a href="members?Type=Search">Search Member</a></li>
+            <li><a href="users?Type=AddNew">Create New User</a></li>
+            <li><a href="users?Type=Search">Search User</a></li>            
+            <li><a href="ChangePassword">Change Password</a></li>
+            <li><a href="infos?Type=AddNew">Board Information</a></li>
+            <li><a href="currencies?Type=Search">Search Exchange Rate</a></li>    
+            <li><a href="currencies?Type=Today">Exchange Rate</a></li>
+	</ul>
+	</div>
+    
+    </div>
+    </td>
+    
+    <td valign="top">
+        
+		<form method='post' name='frm_DATA_CURRENCIES' action="currencies?Type=Search">	
+                <div id='content'>
+                Date: <input type="text" name="myTxtSearch" value="#DATE#" class="myDatePicker"  readonly="true"/> 
+                <input type='submit' value='Search' /> &nbsp;&nbsp;&nbsp;
+            	</div>
+                <div id='content'>
+#DATA#
+                </div>               
+       		
+		</form>
+    </td></tr>
+    
+</table>
+
+</div>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">  
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Adding a Timepicker to jQuery UI Datepicker</title> 
+		<meta name="Description" content="jQuery Timepicker Addon.  Add a timepicker to your jQuery UI Datepicker.  With options to show only time, format time, and much more." />
+		<meta name="Keywords" content="jQuery, UI, datepicker, timepicker, datetime, time, format" />
+		
+		
+		<link rel="stylesheet" media="all" type="text/css" href="jquery-ui/css/ui-lightness/jquery-ui-1.8.13.custom.css" />
+		<style type="text/css"> 
+			body,img,p,h1,h2,h3,h4,h5,h6,form,table,td,ul,li,dl,dt,dd,pre,blockquote,fieldset,label{
+				margin:0;
+				padding:0;
+				border:0;
+			}
+
+			.example-container{margin: 0 0 40px 0; padding: 20px; }
+			.example-container p{ font-weight: bold; }
+			.example-container dt{ font-weight: bold; height: 20px; }
+			.example-container dd{ margin: -20px 0 10px 100px; border-bottom: solid 1px #fff; }
+			.example-container input{ width: 150px; }
+			.clear{ clear: both; }
+			#ui-datepicker-div{ font-size: 80%; }
+			
+			/* css for timepicker */
+			.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+			.ui-timepicker-div dl{ text-align: left; }
+			.ui-timepicker-div dl dt{ height: 25px; }
+			.ui-timepicker-div dl dd{ margin: -25px 10px 10px 65px; }
+			.ui-timepicker-div td { font-size: 90%; }
+			
+		</style> 
+		
+		<script type="text/javascript" src="jquery-ui/js/jquery-1.5.1.min.js"></script>
+
+		<script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.13.custom.min.js"></script>
+		<script type="text/javascript" src="jquery-ui/js/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				$('.example-container').each(function(i){
+					$('#example2').datetimepicker({
+	ampm: true
+
+				});
+			});
+			});
+		</script>
+	</head> 
+<body> 
+		<div class="example-container">
+		<div>
+		<input type="text" name="example2" id="example2" value="" />
+		</div>
+
+	</div>
+
+</body>
+</html>

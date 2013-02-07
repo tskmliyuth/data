@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Template</title>
+<link rel="stylesheet" type="text/css" href="css/template.css" />
+<link rel="stylesheet" type="text/css" href="menu/style.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.4/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.4/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.4/demo/demo.css">
+	<script type="text/javascript" src="jquery-easyui-1.2.4/jquery-1.6.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.2.4/jquery.easyui.min.js"></script>
+	<script>
+		var products = [
+		    {productid:'FI-SW-01',name:'Koi'},
+		    {productid:'K9-DL-01',name:'Dalmation'},
+		    {productid:'RP-SN-01',name:'Rattlesnake'},
+		    {productid:'RP-LI-02',name:'Iguana'},
+		    {productid:'FL-DSH-01',name:'Manx'},
+		    {productid:'FL-DLH-02',name:'Persian'},
+		    {productid:'AV-CB-01',name:'Amazon Parrot'}
+		];
+		function productFormatter(value){
+			for(var i=0; i<products.length; i++){
+				if (products[i].productid == value) return products[i].name;
+			}
+			return value;
+		}
+		$(function(){
+			var lastIndex;
+			$('#tt').datagrid({
+				toolbar:[{
+					text:'append',
+					iconCls:'icon-add',
+					handler:function(){
+					$('#tt').datagrid('endEdit', lastIndex);
+						$('#tt').datagrid('appendRow',{
+							itemid:'',
+							productid:'',
+							listprice:'',
+							unitprice:'',
+							attr1:'',
+							status:'P'
+						});
+						var lastIndex = $('#tt').datagrid('getRows').length-1;
+						$('#tt').datagrid('selectRow', lastIndex);
+						$('#tt').datagrid('beginEdit', lastIndex);
+					}
+				},'-',{
+					text:'delete',
+					iconCls:'icon-remove',
+					handler:function(){
+						var row = $('#tt').datagrid('getSelected');
+						if (row){
+							var index = $('#tt').datagrid('getRowIndex', row);
+							$('#tt').datagrid('deleteRow', index);
+						}
+					}
+				},'-',{
+					text:'accept',
+					iconCls:'icon-save',
+					handler:function(){
+						$('#tt').datagrid('acceptChanges');
+					}
+				},'-',{
+					text:'reject',
+					iconCls:'icon-undo',
+					handler:function(){
+						$('#tt').datagrid('rejectChanges');
+					}
+				},'-',{
+					text:'GetChanges',
+					iconCls:'icon-search',
+					handler:function(){
+						var rows = $('#tt').datagrid('getChanges');
+						alert('changed rows: ' + rows.length + ' lines');
+					}
+				}],
+				onBeforeLoad:function(){
+					$(this).datagrid('rejectChanges');
+				},
+				onClickRow:function(rowIndex){
+					if (lastIndex != rowIndex){
+						$('#tt').datagrid('endEdit', lastIndex);
+						$('#tt').datagrid('beginEdit', rowIndex);
+					}
+					lastIndex = rowIndex;
+				}
+			});
+		});
+	</script>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+	<div id="Space"></div>
+
+	<div id="header"><img src='images/banner.jpg' /></div>
+    
+  	<div id="top-menu">
+   		<div class="dropdown">			
+            <ul>
+  				<li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Admin</a></li>
+ 				<li><a href="manage-session.html">Manage Session</a></li>
+   				<li><a href="input-report.html">Input Report</a></li>
+            	<li><a href="#">Help</a>
+                	<ul><li><a href="#">Contact Us</a></li></ul>
+                </li>
+  				<li><a href="#">Sign Out</a></li>
+            </ul>
+   		</div>  
+	</div> 
+
+	<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">Create New Member</div></td>
+    </tr></table>
+    </div>
+
+<div id="containtor">
+     
+    <table><tr><td valign="top">
+    
+	<div class="left-menu">
+    
+    	<div id="menu4">
+		<ul>
+			<li><a href="#">Create New Member</a></li>
+            <li><a href="#">Search Member</a></li>
+            <li><a href="#">Create New User</a></li>
+            <li><a href="#">Search User</a></li>
+			<li><a href="#"​​>My Profile</a></li>
+			<li><a href="#">Change Password</a></li>
+            <li><a href="#">Board Information</a></li>
+            <li><a href="#">Exchange Rate</a></li>
+		</ul>
+		</div>
+    
+    </div>
+
+    </td>
+    
+    <td valign="top">
+	<form method="post">
+	
+    <div id="content">
+    
+	<table>
+    
+    <tr><td colspan="4">
+    	
+    	<table style="text-align:left; font-size:14px" cellspacing="5">
+        	
+            <tr>
+            	<td colspan="4" bgcolor="#FFCCCC" height="30px;"><font size="3" color="#FF3300">&nbsp;Search member by : </font></td>
+            </tr>
+            
+            <tr>
+            	<td colspan="4" height="5px;"></td>
+            </tr>
+            <tr>
+            	<td><label>Bank code : </label></td>
+                <td><input type="text" /></td>
+                <td><label>Bank full name : </label></td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+            	<td><label>Abbreviation bank name : </label></td>
+                <td><input type="text" /></td>
+                <td><label>Mobile Phone : </label></td>
+                <td><input type="text" /></td>
+            </tr>
+        </table>  
+        
+    </td></tr>
+    
+	</table>
+	
+    </div>
+    
+    <div id="content">
+    	<input type="submit" value="Search" />
+        <input type="reset" value="Clear" />
+    </div>
+    
+     <div id="content">
+<table id="tt" style="width:700px;height:auto"
+			title="Editable DataGrid" iconCls="icon-edit" singleSelect="true"
+			idField="itemid" url="datagrid_data2.json">
+		<thead>
+			<tr>
+				<th field="itemid" width="80">Item ID</th>
+				<th field="productid" width="100" formatter="productFormatter" editor="{type:'combobox',options:{valueField:'productid',textField:'name',data:products,required:true}}">Product</th>
+				<th field="listprice" width="80" align="right" editor="{type:'numberbox',options:{precision:1}}">List Price</th>
+				<th field="unitcost" width="80" align="right" editor="numberbox">Unit Cost</th>
+				<th field="attr1" width="250" editor="text">Attribute</th>
+				<th field="status" width="60" align="center" editor="{type:'checkbox',options:{on:'P',off:''}}">Status</th>
+			</tr>
+		</thead>
+	</table>
+    </div>
+    
+    </form>
+    </td>
+    
+    </tr></table>
+     
+</div>
+
+<div id="footer" style="background-image:url(images/footer.gif)">
+<font color='#0000FF'>&copy;&nbsp;Copyright 2011, IT Department all rights reserved</font>
+</div>
+    
+</div>
+
+</body>
+</html>

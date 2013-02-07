@@ -1,0 +1,102 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'/>
+<link rel="stylesheet" media="all" type="text/css" href="jquery-ui/css/ui-lightness/jquery-ui-1.8.13.custom.css" />
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'/>
+
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+
+<script type="text/javascript" src="jquery-ui/js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-timepicker-addon.js"></script>
+
+<script>
+$(function() {
+	$( '.myDatePicker' ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+        
+        $('.myDateTimePicker').datetimepicker({
+		ampm: false,
+                changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+});
+
+</script>
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#myBtSave").click(function(event){
+	
+            var answer=confirm("do you want to update?")
+            if (!answer){
+                return;
+            }
+	
+            event.preventDefault();    
+            $.ajax({
+            type: "POST",
+            url: "onside_files?Type=Update",
+            data:"myBox_FIUP_NO=" + encodeURIComponent($("#myBox_FIUP_NO").val()) + "&myBox_FIUP_NAME=" + encodeURIComponent($("#myBox_FIUP_NAME").val()) + "&myBox_FIUP_REPORT_DATE=" + encodeURIComponent($("#myBox_FIUP_REPORT_DATE").val()) + "&myBox_FIUP_DES=" + encodeURIComponent($("#myBox_FIUP_DES").val()) + "&myBox_FIUP_MEMB_NO=" + encodeURIComponent($("#myBox_FIUP_MEMB_NO").val()) + "&myBox_FIUP_STATUS=" + encodeURIComponent($("#myBox_FIUP_STATUS").val()),
+            success: function(data){                    
+            var x = eval('(' + data + ')');
+            if (x.myERR=="FALSE"){
+	$("#myBox_FIUP_NAME").val("");
+	$("#myBox_FIUP_REPORT_DATE").val("");
+	$("#myBox_FIUP_DES").val("");
+  
+                alert(x.Message);
+            }else{alert(x.Message);}
+	if (x.myERR_FIUP_NAME==null)$("#myERR_FIUP_NAME").text("");else $("#myERR_FIUP_NAME").text(x.myERR_FIUP_NAME) ;
+	if (x.myERR_FIUP_REPORT_DATE==null)$("#myERR_FIUP_REPORT_DATE").text("");else $("#myERR_FIUP_REPORT_DATE").text(x.myERR_FIUP_REPORT_DATE) ;
+	if (x.myERR_FIUP_DES==null)$("#myERR_FIUP_DES").text("");else $("#myERR_FIUP_DES").text(x.myERR_FIUP_DES) ;
+	if (x.myERR_FIUP_MEMB_NO==null)$("#myERR_FIUP_MEMB_NO").text("");else $("#myERR_FIUP_MEMB_NO").text(x.myERR_FIUP_MEMB_NO) ;
+	if (x.myERR_FIUP_STATUS==null)$("#myERR_FIUP_STATUS").text("");else $("#myERR_FIUP_STATUS").text(x.myERR_FIUP_STATUS) ;
+   
+            }
+            });
+        });
+    });
+</script>
+
+<div id="search-breadcrumbs_home">
+    	<div id="breadcrumbs_home">Reject file</div>
+</div>
+
+
+<div id="containtor">
+    <div id="content_home"> 
+        <form method='post' name='frm_DATA_ONSIDE_FILES'>
+            <table>
+            	<tr>
+                    <table style='font-size:14px'>
+                    <tr align='left'><td width='150'><label id='myLbl_FIUP_NO'>No</label></td><td width='150'><input type='text' id='myBox_FIUP_NO' value='#myVal_FIUP_NO#' alt='' disabled='disabled'/></td><td><label style='color:#F00;' id='myERR_FIUP_NO'></label></td></tr>
+                    <tr align='left'><td width='150'><label id='myLbl_FIUP_NAME'>Name</label></td><td width='150'><input type='text' id='myBox_FIUP_NAME' value='#myVal_FIUP_NAME#' alt=''/></td><td><label style='color:#F00;' id='myERR_FIUP_NAME'></label></td></tr>
+                    <tr align='left'><td width='150'><label id='myLbl_FIUP_REPORT_DATE'>Report Date</label></td><td width='150'><input type='text' class='myDateTimePicker' id='myBox_FIUP_REPORT_DATE' value='#myVal_FIUP_REPORT_DATE#' alt='' Readonly/></td><td><label style='color:#F00;' id='myERR_FIUP_REPORT_DATE'></label></td></tr>
+                    <tr align='left'><td width='150'><label id='myLbl_FIUP_DES'>Description</label></td><td width='150'><input type='text' id='myBox_FIUP_DES' value='#myVal_FIUP_DES#' alt=''/></td><td><label style='color:#F00;' id='myERR_FIUP_DES'></label></td></tr>
+                    <tr align='left'><td width='150'><label id='myLbl_FIUP_MEMB_NO'>Member Name</label></td><td width='150'><select id='myBox_FIUP_MEMB_NO' alt=''>#myVal_FIUP_MEMB_NO#</select></td><td><label style='color:#F00;' id='myERR_FIUP_MEMB_NO'></label></td></tr>
+                    <tr align='left'><td width='150'><label id='myLbl_FIUP_STATUS'>Status</label></td><td width='150'><select id='myBox_FIUP_STATUS' alt=''>#myVal_FIUP_STATUS#</select></td><td><label style='color:#F00;' id='myERR_FIUP_STATUS'></label></td></tr>
+                    </table>
+	        </tr>                
+            </table>
+       </form>
+   </div>
+    <br/><br/>
+    <div id="content_home" align="center">   
+            <table>
+            	<tr>
+                <input type='button' value='New' onclick="document.location = 'onside_files?Type=AddNew';"  /> &nbsp;&nbsp;&nbsp;
+                <input type='submit' value='Update' name='myBtSave' id='myBtSave' /> &nbsp;&nbsp;&nbsp;
+                <input type='button' value='Search' onclick="document.location = 'onside_files?Type=Search';"  /> &nbsp;&nbsp;&nbsp;
+                <input type='reset' value='Reset' />
+                </tr>                
+            </table>
+   </div>
+</div>

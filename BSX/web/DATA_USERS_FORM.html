@@ -1,0 +1,107 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'>
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'>
+<script>
+$(function() {
+	$( '.myDatePicker' ).datepicker({
+		changeMonth: true,
+		changeYear: true
+	});
+});
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        $("#myBtSave").click(function(event){
+            event.preventDefault();    
+            $.ajax({
+            type: "POST",
+            url: "users?Type=Save",
+            data:"myBox_USER_NAME=" + $("#myBox_USER_NAME").val() + "&myBox_USER_PWD=" + $("#myBox_USER_PWD").val() + "&myBox_USER_FULL_NAME=" + $("#myBox_USER_FULL_NAME").val() + "&myBox_USER_ROLE_NO=" + $("#myBox_USER_ROLE_NO").val() + "&myBox_USER_MEMB_NO=" + $("#myBox_USER_MEMB_NO").val() + "&myBox_USER_STATUS=" + $("#myBox_USER_STATUS").val() + "&myBox_USER_ADDRESS=" + $("#myBox_USER_ADDRESS").val() + "&myBox_USER_PHONE=" + $("#myBox_USER_PHONE").val() + "&myBox_USER_FAX=" + $("#myBox_USER_FAX").val() + "&myBox_USER_EMAIL=" + $("#myBox_USER_EMAIL").val() ,
+            success: function(data){                    
+            var x = eval('(' + data + ')');
+            if (x.myERR=="FALSE"){
+                $("#myBox_USER_NAME").val("");
+                $("#myBox_USER_PWD").val("");
+                $("#myBox_USER_FULL_NAME").val("");
+                $("#myBox_USER_ADDRESS").val("");
+                $("#myBox_USER_PHONE").val("");
+                $("#myBox_USER_FAX").val("");
+                $("#myBox_USER_EMAIL").val("");   
+                alert(x.Message);
+            }else{alert(x.Message);}
+                    if (x.myERR_USER_NAME==null)$("#myERR_USER_NAME").text("");else $("#myERR_USER_NAME").text(x.myERR_USER_NAME) ;
+                    if (x.myERR_USER_PWD==null)$("#myERR_USER_PWD").text("");else $("#myERR_USER_PWD").text(x.myERR_USER_PWD) ;
+                    if (x.myERR_USER_FULL_NAME==null)$("#myERR_USER_FULL_NAME").text("");else $("#myERR_USER_FULL_NAME").text(x.myERR_USER_FULL_NAME) ;
+                    if (x.myERR_USER_ROLE_NO==null)$("#myERR_USER_ROLE_NO").text("");else $("#myERR_USER_ROLE_NO").text(x.myERR_USER_ROLE_NO) ;
+                    if (x.myERR_USER_MEMB_NO==null)$("#myERR_USER_MEMB_NO").text("");else $("#myERR_USER_MEMB_NO").text(x.myERR_USER_MEMB_NO) ;
+                    if (x.myERR_USER_STATUS==null)$("#myERR_USER_STATUS").text("");else $("#myERR_USER_STATUS").text(x.myERR_USER_STATUS) ;
+                    if (x.myERR_USER_ADDRESS==null)$("#myERR_USER_ADDRESS").text("");else $("#myERR_USER_ADDRESS").text(x.myERR_USER_ADDRESS) ;
+                    if (x.myERR_USER_PHONE==null)$("#myERR_USER_PHONE").text("");else $("#myERR_USER_PHONE").text(x.myERR_USER_PHONE) ;
+                    if (x.myERR_USER_FAX==null)$("#myERR_USER_FAX").text("");else $("#myERR_USER_FAX").text(x.myERR_USER_FAX) ;
+                    if (x.myERR_USER_EMAIL==null)$("#myERR_USER_EMAIL").text("");else $("#myERR_USER_EMAIL").text(x.myERR_USER_EMAIL) ;    
+            }
+            });
+        });
+    });
+</script>
+
+<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td ><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">Add new user</div></td>
+    </tr>
+    </table>
+</div>
+
+<div id="containtor">
+<table>
+    <tr><td valign="top">
+    <div class="left-menu">
+    
+    	<div id="menu4">
+	<ul>
+            <li><a href="members?Type=AddNew">Create New Member</a></li>
+            <li><a href="members?Type=Search">Search Member</a></li>
+            <li><a href="users?Type=AddNew">Create New User</a></li>
+            <li><a href="users?Type=Search">Search User</a></li>            
+            <li><a href="ChangePassword">Change Password</a></li>
+            <li><a href="infos?Type=AddNew">Board Information</a></li>
+            <li><a href="currencies?Type=Search">Search Exchange Rate</a></li>    
+            <li><a href="currencies?Type=Today">Exchange Rate</a></li>
+	</ul>
+	</div>
+    
+    </div>
+    </td>
+    
+    <td valign="top">	
+            <form method='post' name='frm_DATA_USERS'>
+                <div id='content'>
+                <table style='font-size:14px'>
+                <tr align='left'><td width='150'><label id='myLbl_USER_NAME'>Username</label></td><td width='150'><input type='text' id='myBox_USER_NAME' value='#myVal_USER_NAME#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_NAME'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_PWD'>Password</label></td><td width='150'><input type='text' id='myBox_USER_PWD' value='#myVal_USER_PWD#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_PWD'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_FULL_NAME'>Full name</label></td><td width='150'><input type='text' id='myBox_USER_FULL_NAME' value='#myVal_USER_FULL_NAME#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_FULL_NAME'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_ROLE_NO'>User Role</label></td><td width='150'><select id='myBox_USER_ROLE_NO' alt=''>#myVal_USER_ROLE_NO#</select></td><td><label style='color:#F00;' id='myERR_USER_ROLE_NO'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_MEMB_NO'>Member Name</label></td><td width='150'><select id='myBox_USER_MEMB_NO' alt=''>#myVal_USER_MEMB_NO#</select></td><td><label style='color:#F00;' id='myERR_USER_MEMB_NO'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_STATUS'>Status</label></td><td width='150'><select id='myBox_USER_STATUS' alt=''>#myVal_USER_STATUS#</select></td><td><label style='color:#F00;' id='myERR_USER_STATUS'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_ADDRESS'>Address</label></td><td width='150'><input type='text' id='myBox_USER_ADDRESS' value='#myVal_USER_ADDRESS#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_ADDRESS'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_PHONE'>Phone</label></td><td width='150'><input type='text' id='myBox_USER_PHONE' value='#myVal_USER_PHONE#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_PHONE'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_FAX'>Fax</label></td><td width='150'><input type='text' id='myBox_USER_FAX' value='#myVal_USER_FAX#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_FAX'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_USER_EMAIL'>Email</label></td><td width='150'><input type='text' id='myBox_USER_EMAIL' value='#myVal_USER_EMAIL#' alt=''/></td><td><label style='color:#F00;' id='myERR_USER_EMAIL'></label></td></tr>
+                </table>
+                </div>
+                <div id='content'>
+                <input type='submit' value='Save' name='myBtSave' id='myBtSave' />  &nbsp;&nbsp;&nbsp;
+                <input type='button' value='Search' onclick="document.location = 'users?Type=Search';"  /> &nbsp;&nbsp;&nbsp;
+                <input type='reset' value='Reset' />
+                </div>
+            </form>
+    </td></tr>
+</table>
+</div>

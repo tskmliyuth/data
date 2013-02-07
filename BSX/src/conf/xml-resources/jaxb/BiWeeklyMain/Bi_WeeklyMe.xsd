@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) by CHAN VANNA (NBC) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="BiWeeklyMain">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FormA" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="FormAMainDate">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ABasePeriod" type="xs:string" nillable="false"/>
+										<xs:element name="AMaintenancePeriod" type="xs:string" nillable="false"/>
+										<xs:element name="AReportingPeriod" type="xs:string" nillable="false"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ABankName" nillable="true">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="FormAExchangeRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="dateA1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod1" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement1" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold1" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory1" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount1" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve1" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA2">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod2" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement2" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold2" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory2" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount2" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve2" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA3">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod3" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement3" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold3" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory3" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount3" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve3" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA4">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod4" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement4" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold4" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory4" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount4" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve4" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA5">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod5" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement5" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold5" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory5" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount5" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve5" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA6">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod6" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement6" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold6" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory6" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount6" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve6" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA7">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod7" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement7" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold7" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory7" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount7" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve7" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA8">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod8" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement8" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold8" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory8" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount8" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve8" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA9">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod9" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement9" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold9" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory9" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount9" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve9" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA10">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod10" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement10" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold10" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory10" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount10" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve10" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA11">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod11" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement11" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold11" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory11" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount11" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve11" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA12">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod12" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement12" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold12" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory12" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount12" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve12" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA13">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod13" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement13" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold13" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory13" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount13" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve13" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateA14">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod14" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement14" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold14" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory14" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccount14" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserve14" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ATotal">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ReserveReauirementTotal" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccountTotal" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserveTotal" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ADailyAverage">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ReserveReauirementAverage" type="xs:decimal" nillable="true"/>
+										<xs:element name="ClearingAccountAverage" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyReserveAverage" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="FormAMainValue">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="MinimumReserve" type="xs:decimal" nillable="true"/>
+										<xs:element name="ReserveRequirmentSurplus" type="xs:decimal" nillable="true"/>
+										<xs:element name="ReserveRequirmentDeficit" type="xs:string" nillable="false"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="FormAApprovedBy" type="xs:string" nillable="false"/>
+							<xs:element name="FormACheckedBy" type="xs:string" nillable="false"/>
+							<xs:element name="FormAPreparedBy" type="xs:string" nillable="false"/>
+							<xs:element name="FormADateOfReport" type="xs:date" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FormB" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="FormBMainDate">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="BBasePeriod" type="xs:string" nillable="false"/>
+										<xs:element name="BMaintenancePeriod" type="xs:string" nillable="false"/>
+										<xs:element name="BReportingPeriod" type="xs:string" nillable="false"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="BBankName" nillable="true">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="FormBExchangeRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="dateB1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod1" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement1" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold1" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory1" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB2">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod2" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement2" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold2" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory2" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB3">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod3" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement3" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold3" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory3" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB4">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod4" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement4" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold4" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory4" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB5">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod5" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement5" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold5" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory5" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB6">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod6" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement6" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold6" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory6" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB7">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod7" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement7" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold7" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory7" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB8">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod8" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement8" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold8" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory8" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB9">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod9" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement9" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold9" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory9" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB10">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod10" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement10" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold10" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory10" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB11">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod11" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement11" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold11" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory11" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB12">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod12" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement12" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold12" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory12" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB13">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod13" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement13" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold13" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory13" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateB14">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateOfMaintenancePeriod14" type="xs:date" nillable="true"/>
+										<xs:element name="ReserveReauirement14" type="xs:decimal" nillable="true"/>
+										<xs:element name="MinimumThreshold14" type="xs:decimal" nillable="true"/>
+										<xs:element name="DailyCompulsory14" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="BTotal" >
+								<xs:complexType>
+									<xs:sequence>
+							<xs:element name="BTotalReserveReauirement" type="xs:decimal" nillable="true"/>
+							</xs:sequence>
+							</xs:complexType>
+							</xs:element>
+							<xs:element name="BDailyAverage" >
+								<xs:complexType>
+									<xs:sequence>
+							<xs:element name="BDailyReserveReauirement" type="xs:decimal" nillable="true"/>
+							</xs:sequence>
+							</xs:complexType>
+							</xs:element>
+							
+							<xs:element name="FormBMainValue">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="MinimumReserve" type="xs:decimal" nillable="true"/>
+										<xs:element name="ReserveRequirmentSurplus" type="xs:decimal" nillable="true"/>
+										<xs:element name="ReserveRequirmentDeficit" type="xs:string" nillable="false"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="FormBApprovedBy" type="xs:string" nillable="false"/>
+							<xs:element name="FormBCheckedBy" type="xs:string" nillable="false"/>
+							<xs:element name="FormBPreparedBy" type="xs:string" nillable="false"/>
+							<xs:element name="FormBDateOfReport" type="xs:date" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

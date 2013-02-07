@@ -1,0 +1,23 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+           <script>
+            function CAuthorize(){
+                var answer=confirm("This is not Excel Template from NBC, Please Upload again");
+                    if (answer){
+                        var theForm=document.getElementById("myForm");
+                        theForm.action = "authorize?ReportType=#SESSION_TYPE#&Type=Authorize";
+                        theForm.submit();                       
+                    }
+
+            }
+           
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

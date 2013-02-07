@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) by CHAN VANNA (NBC) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="BiWeeklyLR">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DDP" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="DDPReportingDate" type="xs:date" nillable="true"/>
+							<xs:element name="DDPBankName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="DDPExchangeRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="Current">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="CurrentNonBankOpeningBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="CurrentNonBankDeposit" type="xs:decimal" nillable="true"/>
+										<xs:element name="CurrentNonBankWithdrawal" type="xs:decimal" nillable="true"/>
+										<xs:element name="CurrentNonBankEndingBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="CurrentBankOpeningBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="CurrentBankDeposit" type="xs:decimal" nillable="true"/>
+										<xs:element name="CurrentBankWithdrawal" type="xs:decimal" nillable="true"/>
+										<xs:element name="CurrentBankEndingBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="CurrentTotal" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Saving">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SavingNonBankOpeningBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="SavingNonBankDeposit" type="xs:decimal" nillable="true"/>
+										<xs:element name="SavingNonBankWithdrawal" type="xs:decimal" nillable="true"/>
+										<xs:element name="SavingNonBankEndingBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="SavingBankOpeningBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="SavingBankDeposit" type="xs:decimal" nillable="true"/>
+										<xs:element name="SavingBankWithdrawal" type="xs:decimal" nillable="true"/>
+										<xs:element name="SavingBankEndingBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="SavingTotal" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Fixed">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="FixedNonBankOpeningBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="FixedNonBankDeposit" type="xs:decimal" nillable="true"/>
+										<xs:element name="FixedNonBankWithdrawal" type="xs:decimal" nillable="true"/>
+										<xs:element name="FixedNonBankEndingBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="FixedBankOpeningBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="FixedBankDeposit" type="xs:decimal" nillable="true"/>
+										<xs:element name="FixedBankWithdrawal" type="xs:decimal" nillable="true"/>
+										<xs:element name="FixedBankEndingBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="FixedTotal" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Others">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OthersNonBankOpeningBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="OthersNonBankDeposit" type="xs:decimal" nillable="true"/>
+										<xs:element name="OthersNonBankWithdrawal" type="xs:decimal" nillable="true"/>
+										<xs:element name="OthersNonBankEndingBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="OthersBankOpeningBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="OthersBankDeposit" type="xs:decimal" nillable="true"/>
+										<xs:element name="OthersBankWithdrawal" type="xs:decimal" nillable="true"/>
+										<xs:element name="OthersBankEndingBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="OthersTotal" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Total">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="TotalNonBankOpeningBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="TotalNonBankDeposit" type="xs:decimal" nillable="true"/>
+										<xs:element name="TotalNonBankWithdrawal" type="xs:decimal" nillable="true"/>
+										<xs:element name="TotalNonBankEndingBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="TotalBankOpeningBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="TotalBankDeposit" type="xs:decimal" nillable="true"/>
+										<xs:element name="TotalBankWithdrawal" type="xs:decimal" nillable="true"/>
+										<xs:element name="TotalBankEndingBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="SubTotal" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="DDPApprovedBy" type="xs:string" nillable="false"/>
+							<xs:element name="DDPCheckedBy" type="xs:string" nillable="false"/>
+							<xs:element name="DDPPreparedBy" type="xs:string" nillable="false"/>
+							<xs:element name="DDPDateOfReport" type="xs:date" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DO" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DOReportingDate" type="xs:date" nillable="true"/>
+							<xs:element name="DOExchangeRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="DOBankName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Data" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="Record" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="BankName" type="xs:string" nillable="false"/>
+													<xs:element name="Country" type="xs:string" nillable="false"/>
+													<xs:element name="CurrentAccount" type="xs:decimal" nillable="true"/>
+													<xs:element name="OneMonths" type="xs:decimal" nillable="true"/>
+													<xs:element name="ThreeMonths" type="xs:decimal" nillable="true"/>
+													<xs:element name="SixMonths" type="xs:decimal" nillable="true"/>
+													<xs:element name="TwelveMonths" type="xs:decimal" nillable="true"/>
+													<xs:element name="OverTwelveMonths" type="xs:decimal" nillable="true"/>
+													<xs:element name="OtherDeposits" type="xs:decimal" nillable="true"/>
+													<xs:element name="Total" type="xs:decimal" nillable="true"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+
+							<xs:element name="DOApprovedBy" type="xs:string" nillable="false"/>
+							<xs:element name="DOCheckedBy" type="xs:string" nillable="false"/>
+							<xs:element name="DOPreparedBy" type="xs:string" nillable="false"/>
+							<xs:element name="DODateOfReport" type="xs:date" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Liquidity" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="LiquidityReportingDate" type="xs:date" nillable="true"/>
+							<xs:element name="LiquidityBankName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="LiquidityExchangeRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="DebitItems">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DebitItemsUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="DebitItemsKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="CashGoldUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="CashGoldKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="DepositNBCUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="DepositNBCKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="DepositBankUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="DepositBankKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="PortionOfLendingToBankUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="PortionOfLendingToBankKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="CreditItems">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="CreditItemsUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="CreditItemsKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="CreditBalancesUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="CreditBalancesKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="BorrowingsUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="BorrowingsKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ABDifferenceUSD" type="xs:decimal" nillable="true"/>
+							<xs:element name="ABDifferenceKHR" type="xs:decimal" nillable="true"/>
+							<xs:element name="NumeratorItems">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NumeratorItemsUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NumeratorItemsKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="FromCUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="FromCKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="PortionOfLendingToCustomerUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="PortionOfLendingToCustomerKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="TreasuryBillUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="TreasuryBillKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="DenominatorItems">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DenominatorItemsUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="DenominatorItemsKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="AbsoluteAmountOfCUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="AbsoluteAmountOfCKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="EightyPercentOfFixedDepositUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="EightyPercentOfFixedDepositKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="FiftyPercentOfFixedDepositUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="FiftyPercentOfFixedDepositKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="FiftyPercentOfSavingDepositUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="FiftyPercentOfSavingDepositKHR" type="xs:decimal" nillable="true"/>
+										<xs:element name="SixtyPercentOfDemandDepositUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SixtyPercentOfDemandDepositKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="LiquidityRatioUSD" type="xs:decimal" nillable="true"/>
+							<xs:element name="LiquidityRatioKHR" type="xs:decimal" nillable="true"/>
+							<xs:element name="Note" type="xs:string" nillable="false"/>
+							<xs:element name="LiquidityCEO" type="xs:string" nillable="false"/>
+							<xs:element name="LiquidityVerifiedBy" type="xs:string" nillable="false"/>
+							<xs:element name="LiquidityPreparedBy" type="xs:string" nillable="false"/>
+							<xs:element name="LiquidityDateOfReport" type="xs:date" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

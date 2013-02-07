@@ -1,0 +1,38 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'/>
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'/>
+
+<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td ><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">List of sessions</div></td>
+    </tr>
+    </table>
+</div>
+
+<div id="containtor">
+<table>
+    <tr><td valign="top">
+    <div class="left-menu">
+#SUB_MANU#
+    </div>
+    </td>
+    
+    <td valign="top">
+		<form method='post' name='frm_DATA_SESSIONS'>	
+                <div id='content'>
+#DATA#
+                </div>               
+       		<div id='content'>
+                <input type='button' value='New' onclick="document.location = 'sessions?Type=AddNew';"  /> &nbsp;&nbsp;&nbsp;
+                <input type='button' value='Refresh' onclick="document.location = 'sessions?Type=Search';"  /> &nbsp;&nbsp;&nbsp;
+            	</div>
+		</form>
+    </td></tr>
+</table>
+
+</div>

@@ -1,0 +1,105 @@
+<table>
+        <tr> <td height="40"><font size="+1"> #REPORT_NAME# report for #SESSION_NAME#</font> </td></tr>
+        <tr style="font-size:13px"><td height="30" > Open Session at : #OUP#</td></tr>
+        <tr style="font-size:13px"><td height="30"> Close Session at : #CUP#</td></tr>
+        <tr style="font-size:13px"><td height="30"> Status : #STATUS#</td></tr>
+</table>
+    <br/>
+    
+    
+
+        <script>
+            function CAuthorize(){
+                var answer=confirm("Do you want to authorize this file ?");
+                    if (answer){
+                        var theForm=document.getElementById("myForm");
+                        theForm.action = "authorize?ReportType=#SESSION_TYPE#&Type=Authorize";
+                        theForm.submit();                       
+                    }
+
+            }
+            function CReject(){
+                var answer=confirm("Do you want to reject this file ?");
+                    if (answer){
+                        var theForm=document.getElementById("myForm");
+                        theForm.action = "authorize?ReportType=#SESSION_TYPE#&Type=Reject";
+                        theForm.submit(); 
+                    }
+            }
+        </script>
+
+        <form method="POST" id="myForm">      
+        <input type="hidden" name="fileToBeSigned" value="#DS#"/>
+        <input type="hidden" name="certificationChain"/>   
+        <input type="hidden" name="signature"/>
+        </form>
+        <object
+    	classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D88"
+        codeBase="." width="130" height="25">
+        <param name="name" value="SmartCardSigner">
+        <param name="code" value="SmartCardSigner">
+    	<param name="archive" value="applet/SmartCardSigner.jar">
+    	<param name="mayscript" value="true">
+	    <param name="type" value="application/x-java-applet;version=1.5">
+            <param name="scriptable" value="false">
+	    <param name="fileNameField" value="fileToBeSigned">
+	    <param name="certificationChainField" value="certificationChain">
+	    <param name="signatureField" value="signature">
+	    <param name="signButtonCaption" value="Authorize">
+            <param name="JAVASCRIPT_FUNCTION_NAME" value="CAuthorize">
+	    <comment>
+                    <embed
+	            type="application/x-java-applet;version=1.5"
+                    name="SmartCardSigner"
+	            code="SmartCardSigner" 
+                    archive="applet/SmartCardSigner.jar"
+	            width="130" height="25" scriptable="true"
+		    pluginspage="http://java.sun.com/products/plugin/index.html#download"
+	            fileNameField="fileToBeSigned"
+	            certificationChainField="certificationChain"
+	            signatureField="signature"
+	            signButtonCaption="Authorize"
+                    JAVASCRIPT_FUNCTION_NAME="CAuthorize">
+                    </embed>
+		    <noembed>
+	            Smart card signing applet can not be started because
+	            Java Plugin 1.5 or newer is not installed.
+                    </noembed>
+	    </comment>
+	</object>
+
+        <object
+    	classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D88"
+        codeBase="." width="130" height="25">
+        <param name="name" value="SmartCardSigner">
+        <param name="code" value="SmartCardSigner">
+    	<param name="archive" value="applet/SmartCardSigner.jar">
+    	<param name="mayscript" value="true">
+	    <param name="type" value="application/x-java-applet;version=1.5">
+            <param name="scriptable" value="false">
+	    <param name="fileNameField" value="fileToBeSigned">
+	    <param name="certificationChainField" value="certificationChain">
+	    <param name="signatureField" value="signature">
+	    <param name="signButtonCaption" value="Authorize">
+            <param name="JAVASCRIPT_FUNCTION_NAME" value="CAuthorize">
+	    <comment>
+                    <embed
+	            type="application/x-java-applet;version=1.5"
+                    name="SmartCardSigner"
+	            code="SmartCardSigner" 
+                    archive="applet/SmartCardSigner.jar"
+	            width="130" height="25" scriptable="true"
+		    pluginspage="http://java.sun.com/products/plugin/index.html#download"
+	            fileNameField="fileToBeSigned"
+	            certificationChainField="certificationChain"
+	            signatureField="signature"
+	            signButtonCaption="Reject"
+                    JAVASCRIPT_FUNCTION_NAME="CReject">
+                    </embed>
+		    <noembed>
+	            Smart card signing applet can not be started because
+	            Java Plugin 1.5 or newer is not installed.
+                    </noembed>
+	    </comment>
+	</object>
+        

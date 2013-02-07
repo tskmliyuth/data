@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Users/moliyuth/Desktop/BSRS/xsn_form_templates/DailyReport.xsd" uri="src/conf/xml-resources/jaxb/DailyReport/DailyReport.xsd"/>
+    <system systemId="file:/D:/back%20up/New%20With%20XML/BSX/xsd/Bi_WeeklyLR.xsd" uri="src/conf/xml-resources/jaxb/Bi_weeklyLR/Bi_WeeklyLR.xsd"/>
+    <system systemId="file:/D:/back%20up/New%20With%20XML/BSX/xsn_form_templates/Bi_WeeklyLR.xsd" uri="src/conf/xml-resources/jaxb/Bi_WeeklyLR/Bi_WeeklyLR.xsd"/>
+    <system systemId="file:/D:/back%20up/New%20With%20XML/BSX/xsd/Monthly.xsd" uri="src/conf/xml-resources/jaxb/Monthly_Report/Monthly.xsd"/>
+    <system systemId="file:/C:/Users/moliyuth/Desktop/MonthlyV3.xsd" uri="src/conf/xml-resources/jaxb/Monthly/MonthlyV3.xsd"/>
+    <system systemId="file:/C:/Users/moliyuth/Desktop/Monthly.xsd" uri="src/conf/xml-resources/jaxb/Monthly/Monthly.xsd"/>
+    <system systemId="file:/D:/back%20up/New%20With%20XML/BSX/xsd/WeeklyReport.xsd" uri="src/conf/xml-resources/jaxb/WeeklyReport/WeeklyReport.xsd"/>
+    <system systemId="file:/C:/Users/moliyuth/Desktop/ReportMonthly.xsd" uri="src/conf/xml-resources/jaxb/ReportMonthly/ReportMonthly.xsd"/>
+    <system systemId="file:/D:/back%20up/New%20With%20XML/BSX/xsd/Bi_WeeklyMe.xsd" uri="src/conf/xml-resources/jaxb/BiWeeklyMain/Bi_WeeklyMe.xsd"/>
+    <system systemId="file:/D:/back%20up/New%20With%20XML/BSX/xsd/ReportMonthly.xsd" uri="src/conf/xml-resources/jaxb/ReportMonthly/ReportMonthly.xsd"/>
+</catalog>

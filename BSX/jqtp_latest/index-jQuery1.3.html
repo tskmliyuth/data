@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="css/jqtp.css"/>
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/jQuery.jqtp.min.js"></script>
+</head>
+<body>
+<div id="jqtp_clockDiv" style="padding:10px;" title="Time Picker">
+   <table>
+   <tr>
+      <td rowspan="2"  valign="top">
+         <div id="jqtp_clock"></div>
+      </td>
+      <td valign="middle">
+         <input type="text" id="jqtp_clock_hr" name="jqtp_clock_hr" value="20" size="2"/>:
+         <input type="text" id="jqtp_clock_min" value="12" size="2"/>      
+         <input type="button" id="picktime" value="Pick Time"/>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <input type="button" id="restart_btn" value="Restart Clock"/>
+      </td>
+   </tr>
+   </table>
+</div>
+Time:
+<input type="text" id="appointment_start" size="8"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+   $("#jqtp_clock").jqtp();
+   $("#jqtp_clock").jqtp_realtime();
+
+   $("#restart_btn").click(function () {
+      $("#jqtp_clock").jqtp_realtime();
+   });
+
+   $("#picktime").click(function () {
+      $("#appointment_start").jqtp_object();
+      $("#jqtp_clock").jqtp_getTime();
+   });
+});
+</script>
+
+</body>
+</html>

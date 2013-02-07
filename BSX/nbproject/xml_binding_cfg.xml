@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<schemas xmlns='http://xml.netbeans.org/schema/JAXBWizConfig' destdir='build/generated-sources/jaxb' projectName='BSX' version='1.0'>
+	<schema type='-xmlschema' package='' name='DailyReport'>
+		<xjc-options>
+		</xjc-options>
+		<schema-sources>
+			<schema-source location='src/conf/xml-resources/jaxb/DailyReport/DailyReport.xsd' origLocation='C:\Users\moliyuth\Desktop\BSRS\xsn_form_templates\DailyReport.xsd'/>
+		</schema-sources>
+		<bindings>
+		</bindings>
+		<catalog/>
+	</schema>
+	<schema type='-xmlschema' package='' name='Bi_WeeklyLR'>
+		<xjc-options>
+		</xjc-options>
+		<schema-sources>
+			<schema-source location='src/conf/xml-resources/jaxb/Bi_WeeklyLR/Bi_WeeklyLR.xsd' origLocation='xsn_form_templates/Bi_WeeklyLR.xsd'/>
+		</schema-sources>
+		<bindings>
+		</bindings>
+		<catalog/>
+	</schema>
+	<schema type='-xmlschema' package='' name='WeeklyReport'>
+		<xjc-options>
+		</xjc-options>
+		<schema-sources>
+			<schema-source location='src/conf/xml-resources/jaxb/WeeklyReport/WeeklyReport.xsd' origLocation='xsd/WeeklyReport.xsd'/>
+		</schema-sources>
+		<bindings>
+		</bindings>
+		<catalog/>
+	</schema>
+	<schema type='-xmlschema' package='' name='BiWeeklyMain'>
+		<xjc-options>
+		</xjc-options>
+		<schema-sources>
+			<schema-source location='src/conf/xml-resources/jaxb/BiWeeklyMain/Bi_WeeklyMe.xsd' origLocation='xsd/Bi_WeeklyMe.xsd'/>
+		</schema-sources>
+		<bindings>
+		</bindings>
+		<catalog/>
+	</schema>
+	<schema type='-xmlschema' package='' name='ReportMonthly'>
+		<xjc-options>
+		</xjc-options>
+		<schema-sources>
+			<schema-source location='src/conf/xml-resources/jaxb/ReportMonthly/ReportMonthly.xsd' origLocation='xsd/ReportMonthly.xsd'/>
+		</schema-sources>
+		<bindings>
+		</bindings>
+		<catalog/>
+	</schema>
+</schemas>

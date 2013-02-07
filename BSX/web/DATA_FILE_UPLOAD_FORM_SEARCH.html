@@ -1,0 +1,86 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'/>
+<link rel="stylesheet" media="all" type="text/css" href="jquery-ui/css/ui-lightness/jquery-ui-1.8.13.custom.css" />
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'/>
+
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+
+<script type="text/javascript" src="jquery-ui/js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-timepicker-addon.js"></script>
+
+<script type="text/javascript">
+    
+$().ready(function() {
+   
+     $("#myBox_FIUP_SESS_NO").autocomplete({
+         source:"inputreport?ReportType=#REPORT_TYPE#&Type=GSN"
+     }
+    );
+    
+});
+</script>
+
+<script>
+$(function() {
+	$( '.myDatePicker' ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+        
+        $('.myDateTimePicker').datetimepicker({
+		ampm: false,
+                changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+});
+
+</script>
+
+
+<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td ><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">List of #REPORT_NAME# input report</div></td>
+    </tr>
+    </table>
+</div>
+
+<div id="containtor">
+<table>
+    <tr><td valign="top">
+    <div class="left-menu">
+#SUB_MANU#
+    </div>
+    </td>
+    
+    <td valign="top">
+		<form method='post' name='frm_DATA_FILE_UPLOAD' action='inputreport?ReportType=#REPORT_TYPE#&Type=Search'>
+                <div id='content' style="text-align:center;font-size:14px;" >
+                <label id='myLbl_CURR_NO' >Session Name :</label>
+                <input type="text" id='myBox_FIUP_SESS_NO' name='myBox_FIUP_SESS_NO' value="#myVal_FIUP_SESS_NO#" alt=''/>  
+                <input type='submit' value='Search'  /> 
+                </div>
+                
+                <div id='content'>
+                    <table>
+                        <tr> <td height="40"><font size="+1"> #REPORT_NAME# report for #SESSION_NAME#</font> </td></tr>
+                        <tr style="font-size:13px"><td height="30"> Open Session at : #OUP#</td></tr>
+                        <tr style="font-size:13px"><td height="30"> Close Session at : #CUP#</td></tr>
+                        <tr style="font-size:13px"><td height="30"> Status : #STATUS#</td></tr>
+                    </table>                    
+                </div>
+                <div id='content'>
+#DATA#
+                </div>               
+       		 
+		</form>
+    </td></tr>
+</table>
+
+</div>

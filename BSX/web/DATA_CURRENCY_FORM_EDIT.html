@@ -1,0 +1,126 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'/>
+<link rel="stylesheet" media="all" type="text/css" href="jquery-ui/css/ui-lightness/jquery-ui-1.8.13.custom.css" />
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'>
+
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+
+<script type="text/javascript" src="jquery-ui/js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-timepicker-addon.js"></script>
+
+<script>
+$(function() {
+	$( '.myDatePicker' ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+        
+        $('.myDateTimePicker').datetimepicker({
+		ampm: false,
+                changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+});
+
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        $("#myBtSave").click(function(event){
+	
+            var answer=confirm("do you want to update?")
+            if (!answer){
+                return;
+            }
+	
+            event.preventDefault();    
+            $.ajax({
+            type: "POST",
+            url: "currency?Type=Update",
+            data:"myBox_CURR_NO=" + $("#myBox_CURR_NO").val() + "&myBox_CURR_KNAME=" + $("#myBox_CURR_KNAME").val() + "&myBox_CURR_ENAME=" + $("#myBox_CURR_ENAME").val() + "&myBox_CURR_UNIT=" + $("#myBox_CURR_UNIT").val() + "&myBox_CURR_BID=" + $("#myBox_CURR_BID").val() + "&myBox_CURR_ASK=" + $("#myBox_CURR_ASK").val() + "&myBox_CURR_AVERAGE=" + $("#myBox_CURR_AVERAGE").val(),
+            success: function(data){                    
+           var x = eval('(' + data + ')');
+            if (x.myERR=="FALSE"){
+	$("#myBox_CURR_NO").val("");
+	$("#myBox_CURR_KNAME").val("");
+	$("#myBox_CURR_ENAME").val("");
+	$("#myBox_CURR_UNIT").val("");
+	$("#myBox_CURR_BID").val("");
+	$("#myBox_CURR_ASK").val("");
+	$("#myBox_CURR_AVERAGE").val("");
+  
+                alert(x.Message);
+            }else{alert(x.Message);}
+	if (x.myERR_CURR_NO==null)$("#myERR_CURR_NO").text("");else $("#myERR_CURR_NO").text(x.myERR_CURR_NO) ;
+	if (x.myERR_CURR_KNAME==null)$("#myERR_CURR_KNAME").text("");else $("#myERR_CURR_KNAME").text(x.myERR_CURR_KNAME) ;
+	if (x.myERR_CURR_ENAME==null)$("#myERR_CURR_ENAME").text("");else $("#myERR_CURR_ENAME").text(x.myERR_CURR_ENAME) ;
+	if (x.myERR_CURR_UNIT==null)$("#myERR_CURR_UNIT").text("");else $("#myERR_CURR_UNIT").text(x.myERR_CURR_UNIT) ;
+	if (x.myERR_CURR_BID==null)$("#myERR_CURR_BID").text("");else $("#myERR_CURR_BID").text(x.myERR_CURR_BID) ;
+	if (x.myERR_CURR_ASK==null)$("#myERR_CURR_ASK").text("");else $("#myERR_CURR_ASK").text(x.myERR_CURR_ASK) ;
+	if (x.myERR_CURR_AVERAGE==null)$("#myERR_CURR_AVERAGE").text("");else $("#myERR_CURR_AVERAGE").text(x.myERR_CURR_AVERAGE) ;
+   
+            }
+            });
+        });
+    });
+</script>
+
+<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td ><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">Edit currency</div></td>
+    </tr>
+    </table>
+</div>
+
+
+<div id="containtor">
+<table>
+    <tr><td valign="top">
+    <div class="left-menu">    
+    	<div id="menu4">
+	<ul>
+            <li><a href="members?Type=AddNew">Create New Member</a></li>
+            <li><a href="members?Type=Search">Search Member</a></li>
+            <li><a href="users?Type=AddNew">Create New User</a></li>
+            <li><a href="users?Type=Search">Search User</a></li>            
+            <li><a href="ChangePassword">Change Password</a></li>
+            <li><a href="infos?Type=AddNew">Board Information</a></li>
+            <li><a href="currencies?Type=Search">Exchange Rate</a></li>    
+	</ul>
+	</div>
+    
+    </div>
+    </td>
+    
+    <td valign="top">	
+	<form method='post' name='frm_DATA_CURRENCY'>
+	<div id='content'>
+	<table style='font-size:14px'>
+	<tr align='left'><td width='150'><label id='myLbl_CURR_NO'>No.</label></td><td width='150'><input type='text' id='myBox_CURR_NO' value='#myVal_CURR_NO#' alt='' disabled='disabled'/></td><td><label style='color:#F00;' id='myERR_CURR_NO'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_CURR_KNAME'>Khmer Name</label></td><td width='150'><input type='text' id='myBox_CURR_KNAME' value='#myVal_CURR_KNAME#' alt=''/></td><td><label style='color:#F00;' id='myERR_CURR_KNAME'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_CURR_ENAME'>English Name</label></td><td width='150'><input type='text' id='myBox_CURR_ENAME' value='#myVal_CURR_ENAME#' alt=''/></td><td><label style='color:#F00;' id='myERR_CURR_ENAME'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_CURR_UNIT'>Unit</label></td><td width='150'><input type='text' id='myBox_CURR_UNIT' value='#myVal_CURR_UNIT#' alt=''/></td><td><label style='color:#F00;' id='myERR_CURR_UNIT'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_CURR_BID'>Bid</label></td><td width='150'><input type='text' id='myBox_CURR_BID' value='#myVal_CURR_BID#' alt=''/></td><td><label style='color:#F00;' id='myERR_CURR_BID'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_CURR_ASK'>Ask</label></td><td width='150'><input type='text' id='myBox_CURR_ASK' value='#myVal_CURR_ASK#' alt=''/></td><td><label style='color:#F00;' id='myERR_CURR_ASK'></label></td></tr>
+	<tr align='left'><td width='150'><label id='myLbl_CURR_AVERAGE'>Average</label></td><td width='150'><input type='text' id='myBox_CURR_AVERAGE' value='#myVal_CURR_AVERAGE#' alt=''/></td><td><label style='color:#F00;' id='myERR_CURR_AVERAGE'></label></td></tr>
+
+	</table>
+        </div>
+                <div id='content'>
+<!--                <input type='button' value='New' onclick="document.location = 'currency?Type=AddNew';"  /> &nbsp;&nbsp;&nbsp;-->
+                <input type='submit' value='Update' name='myBtSave' id='myBtSave' /> &nbsp;&nbsp;&nbsp;
+                <input type='button' value='Search' onclick="document.location = 'currency?Type=Search';"  /> &nbsp;&nbsp;&nbsp;
+                <input type='reset' value='Reset' />
+                </div>
+	</form>
+    </td></tr>
+</table>
+</div>

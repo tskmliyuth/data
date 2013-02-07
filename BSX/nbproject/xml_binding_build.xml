@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+            *** GENERATED FROM xml_binding_cfg.xml - DO NOT EDIT  ***
+            *** Configure thru JAXB Wizard.                       ***
+        -->
+<project name="BSX_jaxb" default="default" basedir=".">
+    <target name="xjc-typedef-target" depends="-init-project">
+        <typedef classname="com.sun.tools.xjc.XJCTask" name="xjc" xmlns:s="http://xml.netbeans.org/schema/JAXBWizConfig">
+            <classpath path="${jaxbwiz.xjcdef.classpath}"/>
+        </typedef>
+    </target>
+    <target name="jaxb-clean-code-generation" depends="clean,jaxb-code-generation"/>
+    <target name="jaxb-code-generation" depends="xjc-typedef-target,-do-init,-init-macrodef-javac">
+        <mkdir dir="${build.generated.sources.dir}/jaxb" xmlns:s="http://xml.netbeans.org/schema/JAXBWizConfig"/>
+        <mkdir dir="build/generated/jaxbCache" xmlns:s="http://xml.netbeans.org/schema/JAXBWizConfig"/>
+        <mkdir dir="build/generated/jaxbCache/DailyReport"/>
+        <xjc destdir="build/generated/jaxbCache/DailyReport" catalog="catalog.xml">
+            <classpath>
+                <pathelement location="${src.dir}"/>
+                <pathelement path="${jaxbwiz.xjcrun.classpath}"/>
+            </classpath>
+            <arg value="-xmlschema"/>
+            <schema file="src/conf/xml-resources/jaxb/DailyReport/DailyReport.xsd"/>
+            <depends file="src/conf/xml-resources/jaxb/DailyReport/DailyReport.xsd"/>
+            <produces dir="build/generated/jaxbCache/DailyReport"/>
+        </xjc>
+        <copy todir="${build.generated.sources.dir}/jaxb">
+            <fileset dir="build/generated/jaxbCache/DailyReport"/>
+        </copy>
+        <mkdir dir="build/generated/jaxbCache/Bi_WeeklyLR"/>
+        <xjc destdir="build/generated/jaxbCache/Bi_WeeklyLR" catalog="catalog.xml">
+            <classpath>
+                <pathelement location="${src.dir}"/>
+                <pathelement path="${jaxbwiz.xjcrun.classpath}"/>
+            </classpath>
+            <arg value="-xmlschema"/>
+            <schema file="src/conf/xml-resources/jaxb/Bi_WeeklyLR/Bi_WeeklyLR.xsd"/>
+            <depends file="src/conf/xml-resources/jaxb/Bi_WeeklyLR/Bi_WeeklyLR.xsd"/>
+            <produces dir="build/generated/jaxbCache/Bi_WeeklyLR"/>
+        </xjc>
+        <copy todir="${build.generated.sources.dir}/jaxb">
+            <fileset dir="build/generated/jaxbCache/Bi_WeeklyLR"/>
+        </copy>
+        <mkdir dir="build/generated/jaxbCache/WeeklyReport"/>
+        <xjc destdir="build/generated/jaxbCache/WeeklyReport" catalog="catalog.xml">
+            <classpath>
+                <pathelement location="${src.dir}"/>
+                <pathelement path="${jaxbwiz.xjcrun.classpath}"/>
+            </classpath>
+            <arg value="-xmlschema"/>
+            <schema file="src/conf/xml-resources/jaxb/WeeklyReport/WeeklyReport.xsd"/>
+            <depends file="src/conf/xml-resources/jaxb/WeeklyReport/WeeklyReport.xsd"/>
+            <produces dir="build/generated/jaxbCache/WeeklyReport"/>
+        </xjc>
+        <copy todir="${build.generated.sources.dir}/jaxb">
+            <fileset dir="build/generated/jaxbCache/WeeklyReport"/>
+        </copy>
+        <mkdir dir="build/generated/jaxbCache/BiWeeklyMain"/>
+        <xjc destdir="build/generated/jaxbCache/BiWeeklyMain" catalog="catalog.xml">
+            <classpath>
+                <pathelement location="${src.dir}"/>
+                <pathelement path="${jaxbwiz.xjcrun.classpath}"/>
+            </classpath>
+            <arg value="-xmlschema"/>
+            <schema file="src/conf/xml-resources/jaxb/BiWeeklyMain/Bi_WeeklyMe.xsd"/>
+            <depends file="src/conf/xml-resources/jaxb/BiWeeklyMain/Bi_WeeklyMe.xsd"/>
+            <produces dir="build/generated/jaxbCache/BiWeeklyMain"/>
+        </xjc>
+        <copy todir="${build.generated.sources.dir}/jaxb">
+            <fileset dir="build/generated/jaxbCache/BiWeeklyMain"/>
+        </copy>
+        <mkdir dir="build/generated/jaxbCache/ReportMonthly"/>
+        <xjc destdir="build/generated/jaxbCache/ReportMonthly" catalog="catalog.xml">
+            <classpath>
+                <pathelement location="${src.dir}"/>
+                <pathelement path="${jaxbwiz.xjcrun.classpath}"/>
+            </classpath>
+            <arg value="-xmlschema"/>
+            <schema file="src/conf/xml-resources/jaxb/ReportMonthly/ReportMonthly.xsd"/>
+            <depends file="src/conf/xml-resources/jaxb/ReportMonthly/ReportMonthly.xsd"/>
+            <produces dir="build/generated/jaxbCache/ReportMonthly"/>
+        </xjc>
+        <copy todir="${build.generated.sources.dir}/jaxb">
+            <fileset dir="build/generated/jaxbCache/ReportMonthly"/>
+        </copy>
+        <!--*** Web project javac macro does not support sourcepath attribute, so do not pass "sourcepath=${src.dir}"-->
+    </target>
+</project>

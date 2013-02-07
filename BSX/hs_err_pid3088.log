@@ -1,0 +1,117 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1441792 bytes for offset table expansion
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (blockOffsetTable.cpp:79), pid=3088, tid=3668
+#
+# JRE version: 7.0-b147
+# Java VM: Java HotSpot(TM) Client VM (21.0-b17 mixed mode windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x012cb800):  JavaThread "Unknown thread" [_thread_in_vm, id=3668, stack(0x01100000,0x01150000)]
+
+Stack: [0x01100000,0x01150000],  sp=0x0114f37c,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x1630e1]
+V  [jvm.dll+0x15ddbc]
+V  [jvm.dll+0x5b370]
+V  [jvm.dll+0x5b8f3]
+V  [jvm.dll+0x68c46]
+V  [jvm.dll+0x70053]
+V  [jvm.dll+0x69285]
+V  [jvm.dll+0x67d13]
+V  [jvm.dll+0x71d90]
+V  [jvm.dll+0x121a3f]
+V  [jvm.dll+0x14382a]
+V  [jvm.dll+0xa2940]
+C  [java.exe+0x1347]
+C  [java.exe+0x1db7]
+C  [java.exe+0xa0ab]
+C  [java.exe+0xa135]
+C  [kernel32.dll+0x51174]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x5b3f5]
+C  [ntdll.dll+0x5b3c8]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x012cb800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=3668, stack(0x01100000,0x01150000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+0x01350000 - 0x0137e000 	C:\Program Files\Java\jdk1.7.0\bin\java.exe
+0x771c0000 - 0x772fc000 	C:\Windows\SYSTEM32\ntdll.dll
+0x76f10000 - 0x76fe4000 	C:\Windows\system32\kernel32.dll
+0x755c0000 - 0x7560a000 	C:\Windows\system32\KERNELBASE.dll
+0x75ea0000 - 0x75f40000 	C:\Windows\system32\ADVAPI32.dll
+0x75ce0000 - 0x75d8c000 	C:\Windows\system32\msvcrt.dll
+0x75f40000 - 0x75f59000 	C:\Windows\SYSTEM32\sechost.dll
+0x75b90000 - 0x75c31000 	C:\Windows\system32\RPCRT4.dll
+0x75660000 - 0x75729000 	C:\Windows\system32\USER32.dll
+0x77310000 - 0x7735e000 	C:\Windows\system32\GDI32.dll
+0x77300000 - 0x7730a000 	C:\Windows\system32\LPK.dll
+0x76150000 - 0x761ed000 	C:\Windows\system32\USP10.dll
+0x73f20000 - 0x740be000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16385_none_421189da2b7fabfc\COMCTL32.dll
+0x75c40000 - 0x75c97000 	C:\Windows\system32\SHLWAPI.dll
+0x759d0000 - 0x759ef000 	C:\Windows\system32\IMM32.DLL
+0x76e40000 - 0x76f0c000 	C:\Windows\system32\MSCTF.dll
+0x5f980000 - 0x5fa3e000 	C:\Program Files\Java\jdk1.7.0\jre\bin\msvcr100.dll
+0x5fa40000 - 0x5fd61000 	C:\Program Files\Java\jdk1.7.0\jre\bin\client\jvm.dll
+0x73060000 - 0x73067000 	C:\Windows\system32\WSOCK32.dll
+0x75ca0000 - 0x75cd5000 	C:\Windows\system32\WS2_32.dll
+0x757c0000 - 0x757c6000 	C:\Windows\system32\NSI.dll
+0x72ff0000 - 0x73022000 	C:\Windows\system32\WINMM.dll
+0x757b0000 - 0x757b5000 	C:\Windows\system32\PSAPI.DLL
+0x716c0000 - 0x716cc000 	C:\Program Files\Java\jdk1.7.0\jre\bin\verify.dll
+0x70870000 - 0x70890000 	C:\Program Files\Java\jdk1.7.0\jre\bin\java.dll
+0x703e0000 - 0x703f3000 	C:\Program Files\Java\jdk1.7.0\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Djava.security.policy=applet.policy -Xms1028m -Xmx1028m -Xbootclasspath/p:C:\Program Files\NetBeans 7.1.2\enterprise\modules\ext\javaee6-endorsed\javax.annotation.jar;C:\Program Files\NetBeans 7.1.2\enterprise\modules\ext\javaee6-endorsed\jaxb-api-osgi.jar;C:\Program Files\NetBeans 7.1.2\enterprise\modules\ext\javaee6-endorsed\webservices-api-osgi.jar 
+java_command: REPORT_WEEKLYLRXML.BIWEEKLYLR
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=D:\oracle\product\10.2.0\db_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\GNU\GnuPG\pub
+USERNAME=moliyuth
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1
+
+Memory: 4k page, physical 3370612k(390908k free), swap 7657164k(2128k free)
+
+vm_info: Java HotSpot(TM) Client VM (21.0-b17) for windows-x86 JRE (1.7.0-b147), built on Jun 27 2011 02:25:52 by "java_re" with unknown MS VC++:1600
+
+time: Thu Oct 18 10:16:23 2012
+elapsed time: 3 seconds
+

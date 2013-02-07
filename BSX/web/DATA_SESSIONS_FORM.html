@@ -1,0 +1,149 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'/>
+<link rel="stylesheet" media="all" type="text/css" href="jquery-ui/css/ui-lightness/jquery-ui-1.8.13.custom.css" />
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'/>
+
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+
+<script type="text/javascript" src="jquery-ui/js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-timepicker-addon.js"></script>
+
+<script>
+$(function() {
+	$( '.myDatePicker' ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+        
+        $('.myDateTimePicker').datetimepicker({
+		ampm: false,
+                changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+});
+
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        $("#myBtSave").click(function(event){
+	/*
+            var answer=confirm("Are sure do you want to save?")
+            if (!answer){
+                return;
+            }
+	*/
+            event.preventDefault();    
+            $.ajax({
+            type: "POST",
+            url: "sessions?Type=Save",
+            data:"ReportType=" + $("#myBox_SERE_DURA_NO").val() + "&myBox_SERE_NO=" + $("#myBox_SERE_NO").val() + "&myBox_SERE_NAME=" + $("#myBox_SERE_NAME").val() + "&myBox_SERE_DURA_NO=" + $("#myBox_SERE_DURA_NO").val() + "&myBox_SERE_SDATETIME=" + $("#myBox_SERE_SDATETIME").val() + "&myBox_SERE_EDATETIME=" + $("#myBox_SERE_EDATETIME").val() + "&myBox_SERE_OUP=" + $("#myBox_SERE_OUP").val() + "&myBox_SERE_CUP=" + $("#myBox_SERE_CUP").val(),
+            success: function(data){                    
+            var x = eval('(' + data + ')');
+            if (x.myERR=="FALSE"){
+                $("#myBox_SERE_NO").val("");
+                $("#myBox_SERE_NAME").val("");
+                $("#myBox_SERE_SDATETIME").val("");
+                $("#myBox_SERE_EDATETIME").val("");
+                $("#myBox_SERE_OUP").val("");
+                $("#myBox_SERE_CUP").val("");
+  
+                alert(x.Message);
+            }else{alert(x.Message);}
+                if (x.myERR_SERE_NO==null)$("#myERR_SERE_NO").text("");else $("#myERR_SERE_NO").text(x.myERR_SERE_NO) ;
+                if (x.myERR_SERE_NAME==null)$("#myERR_SERE_NAME").text("");else $("#myERR_SERE_NAME").text(x.myERR_SERE_NAME) ;
+                if (x.myERR_SERE_DURA_NO==null)$("#myERR_SERE_DURA_NO").text("");else $("#myERR_SERE_DURA_NO").text(x.myERR_SERE_DURA_NO) ;
+                if (x.myERR_SERE_SDATETIME==null)$("#myERR_SERE_SDATETIME").text("");else $("#myERR_SERE_SDATETIME").text(x.myERR_SERE_SDATETIME) ;
+                if (x.myERR_SERE_EDATETIME==null)$("#myERR_SERE_EDATETIME").text("");else $("#myERR_SERE_EDATETIME").text(x.myERR_SERE_EDATETIME) ;
+                if (x.myERR_SERE_OUP==null)$("#myERR_SERE_OUP").text("");else $("#myERR_SERE_OUP").text(x.myERR_SERE_OUP) ;
+                if (x.myERR_SERE_CUP==null)$("#myERR_SERE_CUP").text("");else $("#myERR_SERE_CUP").text(x.myERR_SERE_CUP) ;
+   
+            }
+            });
+        });
+        
+        $("#myBtGetName").click(function(event){
+            event.preventDefault();
+            if ($("#myBox_SERE_SDATETIME").val()=="" || $("#myBox_SERE_EDATETIME").val()==""){
+                 alert("Field REPORT FROM and REPORT TO can not be null.");
+                 return;                
+            }
+            $.ajax({
+            type: "POST",
+            url: "sessions?Type=GetName",
+            data:"ReportType=" + $("#myBox_SERE_DURA_NO").val() + "&myBox_SERE_SDATETIME=" + $("#myBox_SERE_SDATETIME").val() + "&myBox_SERE_EDATETIME=" + $("#myBox_SERE_EDATETIME").val() + "&myBox_SERE_OUP=" + $("#myBox_SERE_OUP").val() + "&myBox_SERE_CUP=" + $("#myBox_SERE_CUP").val(),
+            success: function(data){                    
+            var x = eval('(' + data + ')');
+            if (x.myERR=="FALSE"){
+                $("#myBox_SERE_NO").val(x.NO);
+                $("#myBox_SERE_NAME").val(x.NAME);
+                  
+            }else{alert(x.Message);}
+                  
+            }
+            });         
+        });
+    });
+</script>
+
+<div id="search-breadcrumbs">
+    <table>
+    <tr>
+    <td ><div class="left-header">Menu</div></td>
+    <td><div id="breadcrumbs">Add new sessions</div></td>
+    </tr>
+    </table>
+</div>
+
+
+<div id="containtor">
+<table>
+    <tr><td valign="top">
+    <div class="left-menu">    
+#SUB_MANU#    
+    </div>
+    </td>
+    
+    <td valign="top">	
+        <div id='content'>
+        <font size="4" color="#000000" >Current #SESSION_NAME# session</font><br/><br/>
+	<table style='font-size:14px'>
+            <tr align='left' height="30"><td align='left' width='100' ><label id='myLbl_SERE_NO'>Report ID:</label></td><td >#myVal_SERE_NO_CUR#</td></tr>
+            <tr align='left' height="30"><td align='left'  width='100' ><label id='myLbl_SERE_NAME'>Report Name:</label></td><td>#myVal_SERE_NAME_CUR#</td></tr>
+            <tr align='left' height="30"><td align='left'  width='100' ><label id='myLbl_SERE_DURA_NO'>Report Type:</label></td><td>#myVal_SERE_DURA_NO_CUR#</td></tr>
+            <tr align='left' height="30"><td align='left'  width='100' ><label id='myLbl_SERE_SDATETIME'>Report From:</label></td><td>#myVal_SERE_SDATETIME_CUR#</td></tr>
+            <tr align='left' height="30"><td align='left'  width='100' ><label id='myLbl_SERE_EDATETIME'>Report To:</label></td><td>#myVal_SERE_EDATETIME_CUR#</td></tr>
+            <tr align='left' height="30"><td align='left'  width='100' ><label id='myLbl_SERE_OUP'>Open upload:</label></td><td>#myVal_SERE_OUP_CUR#</td></tr>
+            <tr align='left' height="30"><td align='left' width='100' ><label id='myLbl_SERE_CUP'>Close upload:</label></td><td>#myVal_SERE_CUP_CUR#</td></tr>
+	</table>
+        </div>
+        
+	<form method='post' name='frm_DATA_SESSIONS'>
+	<div id='content'>
+        <font size="4" color="#000000" >New #SESSION_NAME# session</font><br/><br/>
+	<table style='font-size:14px'>
+            <tr align='left'><td width='150'><label id='myLbl_SERE_NO'>No</label></td><td width='150'><input type='text' id='myBox_SERE_NO' value='#myVal_SERE_NO#' alt='' disabled='disabled'/></td><td><label style='color:#F00;' id='myERR_SERE_NO'></label></td></tr>
+            <tr align='left'><td width='150'><label id='myLbl_SERE_NAME'>Name</label></td><td width='150'><input type='text' id='myBox_SERE_NAME' value='#myVal_SERE_NAME#' alt='' /></td><td><label style='color:#F00;' id='myERR_SERE_NAME'></label></td></tr>
+            <tr align='left'><td width='150'></td><td width='150'><input type='button' value='Get Name' id='myBtGetName'/> </td><td></td></tr>
+           
+            <tr align='left'><td width='150'><label id='myLbl_SERE_DURA_NO'>Report Type</label></td><td width='150'><select id='myBox_SERE_DURA_NO' alt='' disabled='disabled'>#myVal_SERE_DURA_NO#</select></td><td><label style='color:#F00;' id='myERR_SERE_DURA_NO'></label></td></tr>
+            <tr align='left'><td width='150'><label id='myLbl_SERE_SDATETIME'>Report From</label></td><td width='150'><input type='text' class='myDatePicker' id='myBox_SERE_SDATETIME' value='#myVal_SERE_SDATETIME#' alt='' Readonly/></td><td><label style='color:#F00;' id='myERR_SERE_SDATETIME'></label></td></tr>
+            <tr align='left'><td width='150'><label id='myLbl_SERE_EDATETIME'>Report To</label></td><td width='150'><input type='text' class='myDatePicker' id='myBox_SERE_EDATETIME' value='#myVal_SERE_EDATETIME#' alt='' Readonly/></td><td><label style='color:#F00;' id='myERR_SERE_EDATETIME'></label></td></tr>
+            <tr align='left'><td width='150'><label id='myLbl_SERE_OUP'>Open upload</label></td><td width='150'><input type='text' class='myDateTimePicker' id='myBox_SERE_OUP' value='#myVal_SERE_OUP#' alt='' Readonly/></td><td><label style='color:#F00;' id='myERR_SERE_OUP'></label></td></tr>
+            <tr align='left'><td width='150'><label id='myLbl_SERE_CUP'>Close upload</label></td><td width='150'><input type='text' class='myDateTimePicker' id='myBox_SERE_CUP' value='#myVal_SERE_CUP#' alt='' Readonly/></td><td><label style='color:#F00;' id='myERR_SERE_CUP'></label></td></tr>
+	</table>
+        </div>
+        <div id='content'>
+            <input type='submit' value='Save' name='myBtSave' id='myBtSave' /> &nbsp;&nbsp;&nbsp;
+            <input type='reset' value='Reset' />
+        </div>
+	</form>
+    </td></tr>
+</table>
+</div>

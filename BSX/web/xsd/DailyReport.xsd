@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="DailyReport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BankName" nillable="false">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ReportingDate" type="xs:date" nillable="false"/>
+				<xs:element name="ExchangeRate" type="xs:positiveInteger" nillable="false"/>
+				<xs:element name="PreviousBalance">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PreviousBalanceUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="PreviousBalanceKHR" type="xs:decimal" nillable="false"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FromDeposit">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FromDepositUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="FromDepositKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="FromDepositRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FDSaving">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FDSavingUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="FDSavingKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="FDSavingRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FDCurrent">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FDCurrentUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="FDCurrentKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="FDCurrentRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FDFixed">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FDFixedUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="FDFixedKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="FDFixedRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LoanRepayments">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LoanRepaymentUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="LoanRepaymentKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="LoanRepaymentRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CurrencySale">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CurrencySaleUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="CurrencySaleKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="CurrencySaleRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FundFromNBC">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FundFromNBCUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="FundFromNBCKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="FundFromNBCRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FundFromOtherBank">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FundFromOtherBankUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="FundFromOtherBankKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="FundFromOtherBankRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="OtherReceipt">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OtherReceiptUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="OtherReceiptKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="OtherReceiptRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TotalReceipt">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="TotalReceiptUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="TotalReceiptKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="TotalReceiptRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SubTotalReceipt">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SubTotalReceiptUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="SubTotalReceiptKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="SubTotalReceiptRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="WithdrawalDeposit">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="WithdrawalDepositUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="WithdrawalDepositKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="WithdrawalDepositRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="WDSaving">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="WDSavingUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="WDSavingKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="WDSavingRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="WDCurrent">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="WDCurrentUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="WDCurrentKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="WDCurrentRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="WDFixed">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="WDFixedUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="WDFixedKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="WDFixedRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LoanPaid">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LoanPaidUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="LoanPaidKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="LoanPaidRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CurrencyPurchase">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CurrencyPurchaseUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="CurrencyPurchaseKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="CurrencyPurchaseRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FundToNBC">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FundToNBCUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="FundToNBCKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="FundToNBCRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FundToOtherBank">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FundToOtherBankUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="FundToOtherBankKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="FundToOtherBankRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="OtherPayment">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OtherPaymentUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="OtherPaymentKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="OtherPaymentRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DeductPayment">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DeductPaymentUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="DeductPaymentKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="DeductPaymentRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EndingBalance">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="EndingBalanceUSD" type="xs:decimal" nillable="false"/>
+							<xs:element name="EndingBalanceKHR" type="xs:decimal" nillable="false"/>
+							<xs:element name="EndingBalanceRemark" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BankDirector" type="xs:string" nillable="false"/>
+				<xs:element name="VerifiedBy" type="xs:string" nillable="false"/>
+				<xs:element name="PreparedBy" type="xs:string" nillable="false"/>
+				<xs:element name="DateofReport" type="xs:date" nillable="false"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

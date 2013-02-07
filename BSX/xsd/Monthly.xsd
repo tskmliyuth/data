@@ -1,0 +1,1341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="MONTHLY">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OF_BALANCE_SHEET" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OBSBankName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="OBSReportingDate" type="xs:date" nillable="true"/>
+							<xs:element name="OBSExchangeRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="OBSFinancingCommitments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSFinancingCommitmentsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSFinancingCommitmentsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSFinancingCommitmentsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSReceivedfromBanksandOtherFI">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSReceivedfromBanksandOtherFIInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSReceivedfromBanksandOtherFIInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSReceivedfromBanksandOtherFISRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSInFavourofBanksandOtherFI">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSInFavourofBanksandOtherFIInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSInFavourofBanksandOtherFIInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSInFavourofBanksandOtherFISRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSInFavourofCus">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSInFavourofCusInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSInFavourofCusInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSInFavourofCusSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSOfwhichUnusedPortionofOverdraftLoansandfacilitiesextended">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSOfwhichUnusedPortionofOverdraftLoansandfacilitiesextendedInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSOfwhichUnusedPortionofOverdraftLoansandfacilitiesextendedInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSOfwhichUnusedPortionofOverdraftLoansandfacilitiesextendedSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSGuarantees">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSGuaranteesInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSGuaranteesInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSGuaranteesSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSGuaranteesReceived">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSGuaranteesReceivedInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSGuaranteesReceivedInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSGuaranteesReceivedSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSGuaranteesIssued">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSGuaranteesIssuedInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSGuaranteesIssuedInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSGuaranteesIssuedSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSIssuedOnAccOfCus">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSIssuedOnAccOfCusInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSIssuedOnAccOfCusInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSIssuedOnAccOfCusSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSAcceptances">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSAcceptancesInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSAcceptancesInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSAcceptancesSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSStandbyLettersofCredit">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSStandbyLettersofCreditInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSStandbyLettersofCreditInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSStandbyLettersofCreditSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSBidBonds">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSBidBondsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSBidBondsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSBidBondsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSPerformanceBonds">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSPerformanceBondsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSPerformanceBondsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSPerformanceBondsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSWarrantyBonds">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSWarrantyBondsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSWarrantyBondsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSWarrantyBondsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSPaymentGuarantees">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSPaymentGuaranteesInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSPaymentGuaranteesInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSPaymentGuaranteesSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSEndorsements">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSEndorsementsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSEndorsementsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSEndorsementsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSOtherGuarantees">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSOtherGuaranteesInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSOtherGuaranteesInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSOtherGuaranteesSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSForeignExchangeCommitments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSForeignExchangeCommitmentsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSForeignExchangeCommitmentsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSForeignExchangeCommitmentsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSCommitmentstoBuyForeignCcy">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSCommitmentstoBuyForeignCcyInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSCommitmentstoBuyForeignCcyInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSCommitmentstoBuyForeignCcySRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSSpotForeignExchangeReceivable">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSSpotForeignExchangeReceivableInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSSpotForeignExchangeReceivableInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSSpotForeignExchangeReceivableSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSForwardForeignExchangeReceivable">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSForwardForeignExchangeReceivableInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSForwardForeignExchangeReceivableInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSForwardForeignExchangeReceivableSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSCommitmentstoSellForeignCcy">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSCommitmentstoSellForeignCcyInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSCommitmentstoSellForeignCcyInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSCommitmentstoSellForeignCcySRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSSpotForeignExchangeDeliver">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSSpotForeignExchangeDeliverInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSSpotForeignExchangeDeliverInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSSpotForeignExchangeDeliverSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSForwardForeignExchangeDeliver">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSForwardForeignExchangeDeliverInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSForwardForeignExchangeDeliverInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSForwardForeignExchangeDeliverSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSDerivativeInstrumentsPositions">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSDerivativeInstrumentsPositionsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSDerivativeInstrumentsPositionsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSDerivativeInstrumentsPositionsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSPlsAttachADetailedAnnex">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSPlsAttachADetailedAnnexInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSPlsAttachADetailedAnnexInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSPlsAttachADetailedAnnexSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSInterestRateContracts">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSInterestRateContractsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSInterestRateContractsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSInterestRateContractsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSInterestRateSwapsandForwardRateAgreement">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSInterestRateSwapsandForwardRateAgreementInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSInterestRateSwapsandForwardRateAgreementInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSInterestRateSwapsandForwardRateAgreementSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSForeignExchangeFutures">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSForeignExchangeFuturesInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSForeignExchangeFuturesInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSForeignExchangeFuturesSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSOtherCommitments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSOtherCommitmentsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSOtherCommitmentsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSOtherCommitmentsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSCommitmentstoSellPreciousMetals">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSCommitmentstoSellPreciousMetalsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSCommitmentstoSellPreciousMetalsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSCommitmentstoSellPreciousMetalsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSCommitmentstoPurchasePreciousmetals">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSCommitmentstoPurchasePreciousmetalsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSCommitmentstoPurchasePreciousmetalsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSCommitmentstoPurchasePreciousmetalsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSNonperformingCommitments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSNonperformingCommitmentsInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSNonperformingCommitmentsInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSNonperformingCommitmentsSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSAssetsHeldasCustodian">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSAssetsHeldasCustodianInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSAssetsHeldasCustodianInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSAssetsHeldasCustodianSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSBillsofExchange">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSBillsofExchangeInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSBillsofExchangeInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSBillsofExchangeSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSSecurities">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSSecuritiesInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSSecuritiesInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSSecuritiesSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSOthers">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OBSOthersInRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSOthersInOtherToRiel" type="xs:decimal" nillable="true"/>
+										<xs:element name="OBSOthersSRTotalInRiel" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OBSApprovalDate" type="xs:date" nillable="true"/>
+							<xs:element name="OBSGeneralManager" type="xs:string" nillable="true"/>
+							<xs:element name="OBSVerifiedBy" type="xs:string" nillable="true"/>
+							<xs:element name="OBSPreparedBy" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="NET_WORTH" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NWBankName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="NWReportingDate" type="xs:date" nillable="true"/>
+							<xs:element name="NWExchangeRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="NWPaidInCapital">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWPaidInCapitalInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWPaidInCapitalInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWReserves">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWReservesInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWReservesInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWAuditedNetProfit">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWAuditedNetProfitInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWAuditedNetProfitInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWRetainedEarnings">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWRetainedEarningsInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWRetainedEarningsInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWProvideReferenceOfNBCAuthority1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWProvideReferenceOfNBCAuthority1InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWProvideReferenceOfNBCAuthority1InKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWProvideReferenceOfNBCAuthority2">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWProvideReferenceOfNBCAuthority2InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWProvideReferenceOfNBCAuthority2InKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWSubTotalA">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWSubTotalAInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWSubTotalAInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWLimitedCheckOnRetainedEarnings">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWLimitedCheckOnRetainedEarningsInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWLimitedCheckOnRetainedEarningsInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWOwnSharesHeld">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWOwnSharesHeldInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWOwnSharesHeldInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWAccumulatedLosses">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWAccumulatedLossesInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWAccumulatedLossesInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWIntangibleAssetsToBeDeducted">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWIntangibleAssetsToBeDeductedInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWIntangibleAssetsToBeDeductedInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWShareholdersDirectorsRelatedParties">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWShareholdersDirectorsRelatedPartiesInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWShareholdersDirectorsRelatedPartiesInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWUnpaidPortionOfCapital">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWUnpaidPortionOfCapitalInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWUnpaidPortionOfCapitalInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWLoansOverdraftsAndOtherAdvances">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWLoansOverdraftsAndOtherAdvancesInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWLoansOverdraftsAndOtherAdvancesInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWDebtInstruments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWDebtInstrumentsInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWDebtInstrumentsInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWOtherLoss">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWOtherLossInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWOtherLossInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWSubTotalB">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWSubTotalBInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWSubTotalBInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWTotalAAndB">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWTotalAAndBInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWTotalAAndBInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWReevaluationReserves">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWReevaluationReservesInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWReevaluationReservesInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWProvisionsForGeneralBankingRisks">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWProvisionsForGeneralBankingRisksInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWProvisionsForGeneralBankingRisksInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWGeneralProvision">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWGeneralProvisionInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWGeneralProvisionInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWSubordinatedDebtInstruments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWSubordinatedDebtInstrumentsInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWSubordinatedDebtInstrumentsInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWProvideReferenceOfNBCAuth1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWProvideReferenceOfNBCAuth1InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWProvideReferenceOfNBCAuth1InKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWProvideReferenceOfNBCAuth2">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWProvideReferenceOfNBCAuth2InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWProvideReferenceOfNBCAuth2InKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWSubTotalC">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWSubTotalCInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWSubTotalCInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWLimitCheckOnSubordinatedDebt">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWLimitCheckOnSubordinatedDebtInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWLimitCheckOnSubordinatedDebtInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWEquityPartiBankAndFI">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWEquityPartiBankAndFIInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWEquityPartiBankAndFIInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWSROtherItemsDeducted">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWSROtherItemsDeductedInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWSROtherItemsDeductedInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWSubTotalD">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWSubTotalDInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWSubTotalDInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWTotalCAndD">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWTotalCAndDInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWTotalCAndDInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWLimitCheckOnTier2Capital">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWLimitCheckOnTier2CapitalInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWLimitCheckOnTier2CapitalInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWRegulationNetworth">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NWRegulationNetworthInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="NWRegulationNetworthInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NWApprovalDate" type="xs:date" nillable="true"/>
+							<xs:element name="NWPreparedBy" type="xs:string" nillable="true"/>
+							<xs:element name="NWCEOorDirector" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SOLVENCY_RATIO" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SRBankName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="SRReportingDate" type="xs:date" nillable="true"/>
+							<xs:element name="SRExchangeRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="SRAssetsWithLowRisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRAssetsWithLowRiskBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithLowRiskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithLowRiskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithLowRiskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRCash">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRCashBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRCashWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRCashInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRCashInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRGold">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRGoldBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRGoldWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRGoldInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRGoldInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRClaimOnNBC">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRClaimOnNBCBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimOnNBCWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimOnNBCInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimOnNBCInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRAssetsCollaterallizedByDep">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRAssetsCollaterallizedByDepBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsCollaterallizedByDepWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsCollaterallizedByDepInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsCollaterallizedByDepInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRClaimsonorGuaranteedbySovereigns1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ClaimsonorGuaranteedbySovereignsBalance1InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbySovereigns1Weighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbySovereigns1InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbySovereigns1InKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRAssetsWithModerateRisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRAssetsWithModerateRiskBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithModerateRiskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithModerateRiskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithModerateRiskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRClaimsonorGuaranteedbySovereigns2">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRClaimsonorGuaranteedbySovereigns2InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbySovereigns2Weighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbySovereigns2InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbySovereigns2InKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRClaimsonorGuaranteedbybanks2">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRClaimsonorGuaranteedbybanks2BalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbybanks2Weighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbybanks2InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbybanks2InKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRAssetsWithMediumRisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRAssetsWithMediumRiskBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithMediumRiskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithMediumRiskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithMediumRiskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRClaimsonorGuaranteedbySovereigns3">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRClaimsonorGuaranteedbySovereigns3InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbySovereigns3Weighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbySovereigns3InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbySovereigns3InKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRClaimsonorGuaranteedbyBanks3">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRClaimsonorGuaranteedbyBanks3BalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbyBanks3Weighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbyBanks3InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRClaimsonorGuaranteedbyBanks3InKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRAssetsWithFullRisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRAssetsWithFullRiskBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithFullRiskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithFullRiskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAssetsWithFullRiskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SROtherAssets">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SROtherAssetsBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtherAssetsWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtherAssetsInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtherAssetsInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRTotalI">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRTotalIBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRTotalIWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRTotalIInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRTotalIInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SROperationswithlowRisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SROperationswithlowRiskBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithlowRiskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithlowRiskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithlowRiskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRUndrawnFacilities1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRUndrawnFacilitiesBalance1InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRUndrawnFacilities1Weighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRUndrawnFacilities1InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRUndrawnFacilities1InKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SROtherItemscarryingalowrisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SROtherItemsBalancecarryingalowriskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtherItemscarryingalowriskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtherItemscarryingalowriskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtherItemscarryingalowriskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SROperationswithModerateRisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SROperationswithModerateRiskBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithModerateRiskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithModerateRiskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithModerateRiskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRDocumentaryCredits">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRDocumentaryCreditsBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRDocumentaryCreditsWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRDocumentaryCreditsInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRDocumentaryCreditsInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SROtherItemscarryingmoderaterisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SROtherItemscarryingmoderateriskBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtherItemscarryingmoderateriskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtherItemscarryingmoderateriskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtherItemscarryingmoderateriskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SROperationswithMediumRisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SROperationswithMediumRiskBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithMediumRiskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithMediumRiskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithMediumRiskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRCommitmentstopay">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRCommitmentstopayBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRCommitmentstopayWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRCommitmentstopayInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRCommitmentstopayInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRWarrantiesandguarantees">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRWarrantiesandguaranteesBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRWarrantiesandguaranteesWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRWarrantiesandguaranteesInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRWarrantiesandguaranteesInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRUndrawnFacilities3">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRUndrawnFacilitiesBalance3InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRUndrawnFacilities3Weighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRUndrawnFacilities3InUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRUndrawnFacilities3InKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SROtheritemscarryingmediumrisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SROtheritemscarryingmediumriskBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtheritemscarryingmediumriskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtheritemscarryingmediumriskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtheritemscarryingmediumriskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SROperationswithFullRisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SROperationswithFullRiskBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithFullRiskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithFullRiskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROperationswithFullRiskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRLoanguarantees">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRLoanguaranteesBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRLoanguaranteesWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRLoanguaranteesInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRLoanguaranteesInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRAcceptances">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRAcceptancesBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAcceptancesWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAcceptancesInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRAcceptancesInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SREndorsementonbills">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SREndorsementonbillsBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SREndorsementonbillsWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SREndorsementonbillsInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SREndorsementonbillsInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRTransactionswithrecourse">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRTransactionswithrecourseBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRTransactionswithrecourseWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRTransactionswithrecourseInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRTransactionswithrecourseInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRIrrevocablecreditlines">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRIrrevocablecreditlinesBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRIrrevocablecreditlinesWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRIrrevocablecreditlinesInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRIrrevocablecreditlinesInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SROtheritemscarryingahighrisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SROtheritemscarryingahighriskBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtheritemscarryingahighriskWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtheritemscarryingahighriskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SROtheritemscarryingahighriskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRTotalII">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRTotalIIBalanceInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRTotalIIWeighting" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRTotalIIInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRTotalIIInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRTotalAssetsandOperationsafterweightingRisk">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRTotalAssetsandOperationsafterweightingRiskInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRTotalAssetsandOperationsafterweightingRiskInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRSolvencyRatio">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SRSolvencyRatioInUSD" type="xs:decimal" nillable="true"/>
+										<xs:element name="SRSolvencyRatioInKHR" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SRApprovalDate" type="xs:date" nillable="true"/>
+							<xs:element name="SRCEOorDirector" type="xs:string" nillable="false"/>
+							<xs:element name="SRVerifiedBy" type="xs:string" nillable="true"/>
+							<xs:element name="SRPreparedBy" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="NET_OPEN_POSITION" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NOPBankName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="NOPReportingDate" type="xs:date" nillable="true"/>
+							<xs:element name="NOPExchangeRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="NOPUSD">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPUSDAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPUSDLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPUSDCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPUSDCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPUSDNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPUSDNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPUSDLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPUSDExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPKHR">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPKHRAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKHRLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKHRCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKHRCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKHRNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKHRNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKHRLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKHRExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPEUR">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPEURAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPEURLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPEURCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPEURCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPEURNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPEURNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPEURLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPEURExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPSGD">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPSGDAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPSGDLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPSGDCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPSGDCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPSGDNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPSGDNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPSGDLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPSGDExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPHKD">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPHKDAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPHKDLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPHKDCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPHKDCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPHKDNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPHKDNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPHKDLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPHKDExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPTHB">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPTHBAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTHBLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTHBCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTHBCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTHBNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTHBNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTHBLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTHBExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPJPY">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPJPYAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPJPYLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPJPYCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPJPYCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPJPYNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPJPYNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPJPYLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPJPYExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPPHP">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPPHPAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPPHPLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPPHPCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPPHPCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPPHPNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPPHPNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPPHPLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPPHPExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPAUD">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPAUDAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPAUDLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPAUDCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPAUDCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPAUDNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPAUDNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPAUDLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPAUDExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPCAD">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPCADAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCADLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCADCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCADCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCADNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCADNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCADLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCADExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPGBP">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPGBPAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPGBPLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPGBPCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPGBPCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPGBPNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPGBPNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPGBPLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPGBPExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPCNY">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPCNYAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCNYLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCNYCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCNYCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCNYNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCNYNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCNYLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPCNYExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPKRW">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPKRWAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKRWLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKRWCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKRWCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKRWNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKRWNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKRWLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPKRWExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPVND">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPVNDAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPVNDLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPVNDCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPVNDCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPVNDNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPVNDNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPVNDLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPVNDExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPOTHERS">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPOTHERSAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPOTHERSLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPOTHERSCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPOTHERSCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPOTHERSNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPOTHERSNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPOTHERSLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPOTHERSExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPTOTAL">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NOPTOTALAssets" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTOTALLiabilitiesAndCapital" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTOTALCcyReceivables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTOTALCcyPayables" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTOTALNetOpenPositionLongOrShort" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTOTALNetOpenPositionNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTOTALLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="NOPTOTALExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NOPApprovalDate" type="xs:date" nillable="true"/>
+							<xs:element name="NOPCEOorDirector" type="xs:string" nillable="true"/>
+							<xs:element name="NOPVerifiedBy" type="xs:string" nillable="true"/>
+							<xs:element name="NOPPreparedBy" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LARGE_EXPOSURES_OF_BANK" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LEBBankName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="LEBReportingDate" type="xs:date" nillable="true"/>
+							<xs:element name="LEBExchangeRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBBankNetWorth" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBNo" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBBorrowerName" type="xs:string" nillable="true"/>
+							<xs:element name="LEBNBCApprovalDate" type="xs:date" nillable="true"/>
+							<xs:element name="LEBMaturityDate" type="xs:date" nillable="true"/>
+							<xs:element name="LEBLoanType" type="xs:string" nillable="true"/>
+							<xs:element name="LEBApprovedLimit" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBOutstandingBalance" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBOffBalanceSheetCommitments" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBTotalExposure" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBWeightingFollowingPrakas" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBTotalWeightedExposure" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBTotalWeightedExposureOrNetWorth" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBMaximum" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBExcess" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBLoanPurpose" type="xs:decimal" nillable="true"/>
+							<xs:element name="LEBGrandTotal">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="LEBGrandTotalApprovedLimit" type="xs:decimal" nillable="true"/>
+										<xs:element name="LEBGrandTotalOutstandingBalance" type="xs:decimal" nillable="true"/>
+										<xs:element name="LEBGrandTotalOffBalanceSheetCommitments" type="xs:decimal" nillable="true"/>
+										<xs:element name="LEBGrandTotalTotalExposure" type="xs:decimal" nillable="true"/>
+										<xs:element name="LEBGrandTotalTotalWeightedExposure" type="xs:decimal" nillable="true"/>
+										<xs:element name="LEBGrandTotalTotalWeightedExposureOrNetWorth" type="xs:decimal" nillable="true"/>
+										<xs:element name="LEBGrandTotalMaximum" type="xs:decimal" nillable="true"/>
+										<xs:element name="LEBGrandTotalExcess" type="xs:decimal" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="LEBApprovalDate" type="xs:date" nillable="true"/>
+							<xs:element name="LEBCEOOrDirector" type="xs:string" nillable="true"/>
+							<xs:element name="LEBVerifiedBy" type="xs:string" nillable="true"/>
+							<xs:element name="LEBPreparedBy" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LOANS_TO_RELATED_PARTIES" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LRPBankName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-zA-Z0-9]*[ ]*[/]*)+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="LRPReportingDate" type="xs:date" nillable="true"/>
+							<xs:element name="LRPExchangeRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="LRPBankNetWorth" type="xs:decimal" nillable="true"/>
+							<xs:element name="LRPNo" type="xs:decimal" nillable="true"/>
+							<xs:element name="LRPBorrowersName" type="xs:string" nillable="true"/>
+							<xs:element name="LRPBorrowersAdd" type="xs:string" nillable="true"/>
+							<xs:element name="LRPLoanType" type="xs:string" nillable="true"/>
+							<xs:element name="LRPLoanIssuedDate" type="xs:date" nillable="true"/>
+							<xs:element name="LRPApprovedLimit" type="xs:decimal" nillable="true"/>
+							<xs:element name="LRPOutstandingBalance" type="xs:decimal" nillable="true"/>
+							<xs:element name="LRPYearlyInterestRate" type="xs:decimal" nillable="true"/>
+							<xs:element name="LRPWeightingFollowingPrakas" type="xs:decimal" nillable="true"/>
+							<xs:element name="LRPWeightedOutstandingBalance" type="xs:decimal" nillable="true"/>
+							<xs:element name="LRPSubStandard" type="xs:decimal" nillable="true"/>
+							<xs:element name="LRPDoubtful" type="xs:decimal" nillable="true"/>
+							<xs:element name="LRPLoss" type="xs:decimal" nillable="true"/>
+							<xs:element name="LRPCollateral" type="xs:string" nillable="true"/>
+							<xs:element name="LRPApprovalDate" type="xs:date" nillable="true">
+							</xs:element>
+							<xs:element name="LRPCEOorDirector" type="xs:string" nillable="true">
+							</xs:element>
+							<xs:element name="LRPVerifiedBy" type="xs:string" nillable="true">
+							</xs:element>
+							<xs:element name="LRPPreparedBy" type="xs:string" nillable="true">
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

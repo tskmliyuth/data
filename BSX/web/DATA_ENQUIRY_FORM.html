@@ -1,0 +1,113 @@
+<link rel='stylesheet' href='jquery-ui/development-bundle/themes/base/jquery.ui.all.css'>
+<script src='jquery-ui/development-bundle/jquery-1.5.1.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.core.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.widget.js'></script>
+<script src='jquery-ui/development-bundle/ui/jquery.ui.datepicker.js'></script>
+<link rel='stylesheet' href='jquery-ui/development-bundle/demos/demos.css'>
+<script>
+$(function() {
+	$( '.myDatePicker' ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+                dateFormat: 'yy/mm/dd'
+	});
+});
+
+
+</script>
+
+<script>
+    $(document).ready(function(){
+        $("#myBtSubmit").click(function(event){
+	/*
+            var answer=confirm("Are sure do you want to save?")
+            if (!answer){
+                return;
+            }
+	*/
+            event.preventDefault();    
+            $.ajax({
+            type: "POST",
+            url: "enquiry?Type=Submit",
+            data:"myBox_NAME=" + $("#myBox_NAME").val() + "&myBox_POSITION=" + $("#myBox_POSITION").val() + "&myBox_EMAIL_ADDRESS=" + $("#myBox_EMAIL_ADDRESS").val() + "&myBox_MOBILE_PHONE=" + $("#myBox_MOBILE_PHONE").val() + "&myBox_ENQUIRY_SUBJECT=" + $("#myBox_ENQUIRY_SUBJECT").val() + "&myBox_CONTACT=" + $("#myBox_CONTACT").val()+ "&myBox_ENQUIRY=" + $("#myBox_ENQUIRY").val(),
+            success: function(data){                    
+            var x = eval('(' + data + ')');
+            if (x.myERR=="FALSE"){
+	$("#myBox_NAME").val("");
+	$("#myBox_POSITION").val("");
+	$("#myBox_EMAIL_ADDRESS").val("");
+	$("#myBox_MOBILE_PHONE").val("");
+	$("#myBox_ENQUIRY").val("");
+  
+                alert(x.Message);
+            }else{alert(x.Message);}
+	if (x.myERR_ENQY_CONTACTNAME==null)$("#myERR_ENQY_CONTACTNAME").text("");else $("#myERR_ENQY_CONTACTNAME").text(x.myERR_ENQY_CONTACTNAME) ;
+	if (x.myERR_ENQY_CONTACTPOSITION==null)$("#myERR_ENQY_CONTACTPOSITION").text("");else $("#myERR_ENQY_CONTACTPOSITION").text(x.myERR_ENQY_CONTACTPOSITION) ;
+	if (x.myERR_ENQY_EMAIL==null)$("#myERR_ENQY_EMAIL").text("");else $("#myERR_ENQY_EMAIL").text(x.myERR_ENQY_EMAIL) ;
+	if (x.myERR_ENQY_PHONE==null)$("#myERR_ENQY_PHONE").text("");else $("#myERR_ENQY_PHONE").text(x.myERR_ENQY_PHONE) ;
+	if (x.myERR_ENQY_ENQUIRYTYPEID==null)$("#myERR_ENQY_ENQUIRYTYPEID").text("");else $("#myERR_ENQY_ENQUIRYTYPEID").text(x.myERR_ENQY_ENQUIRYTYPEID) ;
+	if (x.myERR_ENQY_CONTACTBYID==null)$("#myERR_ENQY_CONTACTBYID").text("");else $("#myERR_ENQY_CONTACTBYID").text(x.myERR_ENQY_CONTACTBYID) ;
+        if (x.myERR_ENQY_ENQURYDETAIL==null)$("#myERR_ENQY_ENQURYDETAIL").text("");else $("#myERR_ENQY_ENQURYDETAIL").text(x.myERR_ENQY_ENQURYDETAIL) ;
+            }
+            });
+        });
+    });
+</script>
+<div id="search-breadcrumbs">
+    <table>
+        <tr>
+            <td><div class="left-header">Menu</div></td>
+            <td><div id="breadcrumbs">Enquiry and Feedback</div></td>
+        </tr>
+    </table>
+</div>
+ 
+<div id="containtor">
+    <table>
+        <tr>
+            <td valign="top">
+                <div class="left-menu">
+                    <div id="menu4">
+                        <ul>
+                            <li><a href="feedback?ReportType=11&Type=New">Credit Bureau Complaint</a></li>
+                            <li><a href="feedback?ReportType=12&Type=New">Acknowledgement</a></li>
+                            <li><a href="enquiry?ReportType=13&Type=New">Enquiry</a></li>                            
+                        </ul>
+                    </div>
+                    <br/>
+                  
+                </div>
+            </td>    
+            <td valign="top">                 
+                <form method='post' name='frm_DATA_ENQUIRY'>
+                <div id='content'>
+                <table style='font-size:14px'>
+                <tr align='left'><td width='150' colspan="3"><label id='myLbl_1'><b>Enquiry Form</b></label></td></td></tr>
+                <tr align='left'><td width='150' colspan="3"><label id='myLbl_2'>All fields are required</label></td></td></tr>
+                <tr><td height="30" colspan="3"></td></tr>
+                <tr align='left'><td width='150' colspan="3"><label id='myLbl_3'><b>Personal Information</b></label></td></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_NAME'>Name:</label></td><td width='150'><input type='text' id='myBox_NAME' value='#myVal_NAME#' alt=''/></td><td><label style='color:#F00;' id='myERR_ENQY_CONTACTNAME'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_POSITION'>Position:</label></td><td width='150'><input type='text' id='myBox_POSITION' value='#myVal_POSITION#' alt=''/></td><td><label style='color:#F00;' id='myERR_ENQY_CONTACTPOSITION'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_EMAIL_ADDRESS'>Email Address:</label></td><td width='150'><input type='text' id='myBox_EMAIL_ADDRESS' value='#myVal_EMAIL_ADDRESS#' alt=''/></td><td><label style='color:#F00;' id='myERR_ENQY_EMAIL'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_MOBILE_PHONE'>Mobile Phone:</label></td><td width='150'><input type='text' id='myBox_MOBILE_PHONE' value='#myVal_MOBILE_PHONE#' alt='' /></td><td><label style='color:#F00;' id='myERR_ENQY_PHONE'></label></td></tr>
+                <tr align='left'><td width='150'><label id='myLbl_ENQUIRY_SUBJECT'>Enquiry Subject:</label></td><td width='150'><select id='myBox_ENQUIRY_SUBJECT' alt=''>#myVal_ENQUIRY_SUBJECT#</select></td><td><label style='color:#F00;' id='myERR_ENQY_ENQUIRYTYPEID'></label></td></tr>
+                <tr align='left'><td width='150' colspan="3"><label id='myLbl_4'>How would you prefer to be contacted?</label></td></td></tr>
+                <!--<tr align='left'><td width='150'>#myVal_CONTACT#</td><td><label style='color:#F00;' id='myERR_ENQY_CONTACTBYID'></label></td></tr>-->
+                <!--<tr align='left'><td width='150' colspan="2"><input type="radio" name="myRadioContact" id="myRadioContact" value="1">By Email<input type="radio" name="myRadioContact" id="myRadioContact" value="2">By Phone</td><td><label style='color:#F00;' id='myERR_ENQY_CONTACTBYID'></label></td></tr>-->
+                <tr align='left'><td width='150'><select id='myBox_CONTACT' alt=''style="width:100px">#myVal_CONTACT#</select></td><td><label style='color:#F00;' id='myERR_ENQY_CONTACTBYID'></label></td></tr>
+                
+                <tr><td height="30" colspan="3"></td></tr>
+                <tr align='left'><td width='150' colspan="3"><label id='myLbl_5'><b>Enquiry</b></label></td></td></tr>
+                <tr align='left'><td width='150' colspan="3"><textarea cols="60" rows="5" type='text' id='myBox_ENQUIRY' value='#myVal_ENQUIRY#' alt=''/></textarea></td><td><label style='color:#F00;' id='myERR_ENQY_ENQURYDETAIL'></label></td></tr>
+                </table>
+                        </div>
+                        <div id='content'>
+                        <input type='submit' value='Submit' name='myBtSubmit' id='myBtSubmit' /> &nbsp;&nbsp;&nbsp;
+                        <input type='button' value='Cancel' onclick="document.location = 'Home';"  /> &nbsp;&nbsp;&nbsp;
+                        </div>
+                </form>
+                
+            </td>
+        </tr>
+    </table>
+ </div>
